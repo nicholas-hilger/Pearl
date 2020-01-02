@@ -91,7 +91,10 @@ else if(name_checked = "hopoo") death_msg_shown = "Looks like there's a risk of 
 else death_msg_shown = death_msg[irandom(array_length_1d(death_msg)-1)]
 
 
-run_score = ((total_money-150)*5) + round(total_dmg_dealt) + (kills*50) + ((days-1)*150) + ((lvl-1)*300) + (ds_list_size(perks_gained) * 255)
+if(job = class.useless) money_score = total_money
+else money_score = total_money - 200
+
+run_score = ((money_score)*5) + round(total_dmg_dealt)*2 + (kills*50) + ((days-1)*150) + ((lvl-1)*300) + (ds_list_size(perks_gained) * 255)
 run_score *= (round(highest_floor%5)+1)
 
 if(run_score &lt; 0) run_score = 0
