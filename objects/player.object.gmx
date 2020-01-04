@@ -330,10 +330,20 @@ if(loading_time &lt; 5)
 
 if(armor = item.none)
 {
-cut_resist = base_cut_resist
-pierce_resist = base_pierce_resist
-blunt_resist = base_blunt_resist
-magic_resist = base_magic_resist
+    if(list_contains(perks_gained, perk.naturalist))
+    {
+        cut_resist = 1.2
+        pierce_resist = 1.2
+        blunt_resist = 1.2
+        magic_resist = 1.2
+    }
+    else 
+    {
+        cut_resist = base_cut_resist
+        pierce_resist = base_pierce_resist
+        blunt_resist = base_blunt_resist
+        magic_resist = base_magic_resist
+    }
 }
 
 if(hp &lt; 0) hp = 0

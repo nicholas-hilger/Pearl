@@ -37,6 +37,7 @@ enum perk
     all_in,
     fearless,
     dog_best_friend,
+    naturalist,
     total
 }
 
