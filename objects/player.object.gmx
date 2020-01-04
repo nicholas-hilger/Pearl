@@ -210,7 +210,9 @@ enemy_percent = 0
 floors = 0
 hunger_time = 0
 berserk_timer = 0
-hunger_max = 15
+sated_timer = 0
+blood_consumed = 0
+hunger_max = 20
 
 draw_char_sheet = false
 
@@ -837,10 +839,14 @@ if(loading_time = 0 and (moved or waitKey or (waitKeyHeld and canPress)) and !co
     with(enemy_parent) act()
     
     if(shield = item.druidic_shield) hunger_max = 30
-    else if(status = "VAMP") hunger_max = 25
+    else if(status = "VAMP") hunger_max = 10
     else hunger_max = 20
     if(hunger_time &gt;= hunger_max and energy &gt; 0 and room != town) 
     {
+        if(status = "VAMP")
+        {
+            
+        }
         energy--
         hunger_time = 0
     }

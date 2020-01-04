@@ -152,14 +152,12 @@ if(food = item.vampire_blood)
         with(player)
         {
             status = "VAMP"
-            perception *= 2
-            wisdom *= 2
-            strength *= 2
-            dexterity *= 2
-            max_energy += 10
-            max_hp += 50
+            perception += 25
+            wisdom += 25
+            strength += 25
+            dexterity += 25
+            max_hp += 30
             hp = max_hp
-            energy = max_energy
             xp = 0
             instance_destroy(inventory_box)
             instance_create(x,y,vampire_msg)

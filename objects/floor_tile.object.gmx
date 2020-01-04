@@ -69,8 +69,11 @@ if(place_meeting(x,y,floor_tile))
 if(place_meeting(x,y,player) and bloodied and player.status = "VAMP")
 {
     bloodied = false
-    player.hp += ceil(player.max_hp*0.005)
-    player.energy += ceil(player.max_energy*0.01)   
+    if(player.sated_timer = 0)
+    {
+        player.hp += floor(player.max_hp*0.01)
+        player.energy++
+    }
 }
 </string>
           </argument>
