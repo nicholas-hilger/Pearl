@@ -807,8 +807,8 @@ if((moved or waitKey or (waitKeyHeld and canPress)) and !console.vis and !draw_c
     }
     with(enemy_parent) act()
     
-    if(shield = item.druidic_shield) hunger_max = 40
-    else if(status = "VAMP") hunger_max = 35
+    if(shield = item.druidic_shield) hunger_max = 30
+    else if(status = "VAMP") hunger_max = 25
     else hunger_max = 20
     if(hunger_time &gt;= hunger_max and energy &gt; 0 and room != town) 
     {
