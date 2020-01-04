@@ -153,6 +153,7 @@ if(!console.vis)
                 en_gain = round(en_gain*1.25)
                 hp_gain = round(hp_gain*1.25)
             }
+            if(player.status = "VAMP") hp_gain = round(hp_gain/4)
             
             if(list_contains(player.perks_gained, perk.brain_food)) player.xp += round(player.max_xp*0.03)
             
@@ -170,7 +171,7 @@ if(!console.vis)
                 }
             }
             
-            player.energy_gain += en_gain 
+            if(player.status != "VAMP") player.energy_gain += en_gain 
             player.health_gain += hp_gain
             player.strength += global.item_index[# ds_list_find_value(player.inventory, index), item_stat.str_gain]
             player.dexterity += global.item_index[# ds_list_find_value(player.inventory, index), item_stat.dex_gain]
@@ -184,7 +185,7 @@ if(!console.vis)
                 gain_buff(buff.health_gain, hp_gain)
             }
             
-            if(global.item_index[# ds_list_find_value(player.inventory, index), item_stat.hunger_gain] &gt; 0)
+            if(global.item_index[# ds_list_find_value(player.inventory, index), item_stat.hunger_gain] &gt; 0 and player.status != "VAMP")
             {
                 gain_buff(buff.energy_gain, en_gain)
             }
