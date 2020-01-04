@@ -1344,7 +1344,7 @@ if(draw_char_sheet)
     draw_rectangle(9,174,1050, 1074, true)
     draw_rectangle(1051,174,1909, 1074, true)
     
-    if(status = "OK") transform_string = ""
+    transform_string = ""
     if(status = "VAMP") transform_string = "Vampire"
     
     draw_set_halign(fa_left)
