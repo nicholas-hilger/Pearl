@@ -318,6 +318,16 @@ if(attacker = player)
             }
         }
     }
+    if(list_contains(player.perks_gained, perk.cutpurse))
+    {
+        steal_chance = irandom(100)
+        if(steal_chance < 15)
+        {
+            money_stolen = ceil(dmg/2) + irandom(100) + 10
+            ds_list_insert(player.messages, 0, "You manage to steal " + string(money_stolen) + " Zun from " + string(defender.name) + "!")
+            player.money += money_stolen
+        }
+    }
 }
 
 if(attacker = bullet)

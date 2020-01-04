@@ -38,6 +38,7 @@ enum perk
     fearless,
     dog_best_friend,
     naturalist,
+    cutpurse,
     total
 }
 
