@@ -90,15 +90,34 @@ if(ds_list_size(perk_choices) &gt; 0 and !console.vis)
         else index++
     }
     
-    if(rightKey)
+    if(player.max_perk_page &gt; 0)
     {
-        if(player.perk_page &lt; player.max_perk_page) player.perk_page++
-        else player.perk_page = 0  
-    }
-    if(leftKey)
-    {
-        if(player.perk_page &gt; 0) player.perk_page--
-        else player.perk_page = player.max_perk_page
+        if(floor(ds_list_size(player.perks_gained)/10) = (ds_list_size(player.perks_gained)/10))
+        {
+            if(rightKey)
+            {
+                if(player.perk_page &lt; player.max_perk_page-1) player.perk_page++
+                else player.perk_page = 0  
+            }
+            if(player.leftKey)
+            {
+                if(player.perk_page &gt; 0) player.perk_page--
+                else player.perk_page = player.max_perk_page-1
+            }
+        }
+        else
+        {
+            if(rightKey)
+            {
+                if(player.perk_page &lt; player.max_perk_page) player.perk_page++
+                else player.perk_page = 0  
+            }
+            if(leftKey)
+            {
+                if(player.perk_page &gt; 0) player.perk_page--
+                else player.perk_page = player.max_perk_page
+            }
+        }
     }
     
     if(useKey)
@@ -166,11 +185,11 @@ draw_set_halign(fa_left)
 
 
 draw_set_halign(fa_center)
-if(player.max_perk_page = 0) draw_text(1480, 180, "Current Perks")
+if(player.max_perk_page = 0 or ds_list_size(player.perks_gained) &lt; 11) draw_text(1480, 180, "Current Perks")
 else
 {
     if(player.perk_page = 0) draw_text(1480, 180, "  Current Perks (" + string(player.perk_page+1) + ") &gt;")
-    else if(player.perk_page &gt; 0 and player.perk_page &lt; player.max_perk_page) draw_text(1480, 180, "&lt; Current Perks (" + string(player.perk_page+1) + ") &gt;")
+    else if(player.perk_page &gt; 0 and player.perk_page &lt; player.max_perk_page and ds_list_size(player.perks_gained)/10 != floor(ds_list_size(player.perks_gained)/10)) draw_text(1480, 180, "&lt; Current Perks (" + string(player.perk_page+1) + ") &gt;")
     else draw_text(1480, 180, "&lt; Current Perks (" + string(player.perk_page+1) + ")  ")
 }
 draw_set_halign(fa_left)
