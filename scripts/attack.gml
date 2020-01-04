@@ -246,10 +246,14 @@ if(attacker = player)
             fumble_chance = (1-fumble_chance)
             fumble_chance *= 100
             fumble_percent = irandom(99) + 1
+            if(list_contains(player.perks_gained, perk.winging_it))
+            {
+                fumble_percent += 10
+            }
             if(fumble_percent < fumble_chance) 
             {
                 fumbled = true
-                dmg = round(dmg/4)
+                dmg = round(dmg/6)
             }
         }
     }

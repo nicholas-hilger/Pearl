@@ -40,6 +40,7 @@ enum perk
     naturalist,
     cutpurse,
     raimifications,
+    winging_it,
     total
 }
 
