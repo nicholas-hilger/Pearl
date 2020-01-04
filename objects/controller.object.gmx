@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.ver_number = 7
-global.ver_title = "Binging on Balance"
+            <string>global.ver_number = 8
+global.ver_title = "Karnage de Kafka"
 
 item_enum()
 enemy_enum()

@@ -59,23 +59,7 @@ draw_set_font(hud_font)
 draw_set_halign(fa_left)
 
 draw_text_ext(11, 200, "Changelog for Alpha "  +string(global.ver_number) + " (" + string(global.ver_title) + "):
-#-Added more items and tightened stat distributions per tier for each item type
-#-Increased the base inventory size by 2, bringing it up to 10
-#-The Slayer is now locked into using the Slayer's Sword and its boss-bequeathed upgrades
-#-Angellic and Demonic weapons now correctly enact their unique properties
-#-Radiant weapons now have their special effects implemented
-#-Added more information into the Compendium. Also learned how to spell 'Compendium'
-#-Item comparisons are no longer displayed in the Unequip menu
-#-Shields now both have a chance to block, and an amount of damage that they block (eg you take 10 dmg, your shield blocks 50% dmg, you will take 5 dmg if you successfully block)
-#-Energy loss from hunger has been slowed down
-#-Stat gain perks have been buffed
-#-Revenge Elites do less revenge damage
-#-The player's max energy is now increased by 2 at every 10th level
-#-Spells cost less energy to use, some have also had their base damage buffed
-#-Added five new perks: Instant Gratification, Sneaking Mission, Messy Eater, All In, and Fearless
-#-Adjusted the leveling curve (you now level faster, but it dros off after the first dozen or so levels)
-#-Implemented 'economics' (sold items give you 30% less money, and bought items cost 30% more. The Worth stat in your inventory is the midpoint between those prices)
-Hit [Enter] to dismiss the screen)", 24, 1890)
+Hit [Enter] to dismiss this screen)", 24, 1890)
 
 </string>
           </argument>
