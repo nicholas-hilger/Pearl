@@ -36,6 +36,7 @@ enum perk
     messy_eater,
     all_in,
     fearless,
+    dog_best_friend,
     total
 }
 

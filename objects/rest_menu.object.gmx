@@ -27,8 +27,10 @@
             <kind>1</kind>
             <string>index = 0
 
-cost = (100) + round((player.max_hp - player.hp)*1.5)
+cost = (250) + round((player.max_hp - player.hp)*2.5)
 if(cost &gt; 10000) cost = 10000
+
+if(list_contains(player.perks_gained, perk.dog_best_friend)) cost = round(cost/2)
 
 inventory_name = "Inn"
 </string>
