@@ -507,15 +507,34 @@ if(diagonalSwitchKey and !console.vis and !instance_exists(menu_parent))
 
 if(draw_char_sheet)
 {
-    if(rightKey)
+    if(max_perk_page &gt; 0)
     {
-        if(perk_page &lt; max_perk_page) perk_page++
-        else perk_page = 0  
-    }
-    if(leftKey)
-    {
-        if(perk_page &gt; 0) perk_page--
-        else perk_page = max_perk_page
+        if(floor(ds_list_size(perks_gained)/10) = (ds_list_size(perks_gained)/10))
+        {
+            if(rightKey)
+            {
+                if(perk_page &lt; max_perk_page-1) perk_page++
+                else perk_page = 0  
+            }
+            if(leftKey)
+            {
+                if(perk_page &gt; 0) perk_page--
+                else perk_page = max_perk_page-1
+            }
+        }
+        else
+        {
+            if(rightKey)
+            {
+                if(perk_page &lt; max_perk_page) perk_page++
+                else perk_page = 0  
+            }
+            if(leftKey)
+            {
+                if(perk_page &gt; 0) perk_page--
+                else perk_page = max_perk_page
+            }
+        }
     }
 }
 
@@ -730,7 +749,7 @@ if(loading_time = 0 and !draw_char_sheet and !instance_exists(menu_parent) and !
     }
 }
 
-if((moved or waitKey or (waitKeyHeld and canPress)) and !console.vis and !draw_char_sheet and !instance_exists(menu_parent))
+if(loading_time = 0 and (moved or waitKey or (waitKeyHeld and canPress)) and !console.vis and !draw_char_sheet and !instance_exists(menu_parent))
 {
     key_timer = 0
     controller.minute++
@@ -855,7 +874,7 @@ if((moved or waitKey or (waitKeyHeld and canPress)) and !console.vis and !draw_c
     moved = 0
 }
 
-if(!console.vis and !instance_exists(dungeon_carver) and!instance_exists(welcome_screen) and !instance_exists(changelog_screen))
+if(!console.vis and !instance_exists(dungeon_carver) and!instance_exists(welcome_screen) and !instance_exists(changelog_screen) and loading_time = 0)
 {
     if((keyboard_check_pressed(ord("C")) or gamepad_button_check_pressed(0, gp_select)) and !instance_exists(look_selector) and !instance_exists(shoot_selector) and !instance_exists(spell_selector))
     {
@@ -1324,7 +1343,7 @@ if(debugShow)
 {
     draw_set_color(c_white)
     draw_set_halign(fa_left)
-    draw_text(2, 180,"FPS: " + string(fps) + "#X: " + string(x) + "#Y: " + string(y) + "#key_timer: " + string(key_timer) + "#floor_tiles: " + string(instance_number(floor_tile)) + "#enemies: " + string(instance_number(enemy_parent)) + "#items: " + string((instance_number(item_parent))) + "#enemy_spawn_chance: " + string(enemy_spawn_chance) + "#enemy_percent: " + string(enemy_percent) + "#walls: " + string(instance_number(wall)) + "#torches: " + string(instance_number(torch)) + "#hunger_time/hunger_max: " + string(hunger_time) + "/" + string(hunger_max) + "#elite_spawn_chance: " + string((14+floor(player.floors/5) * 2)) + "%#breakables: " + string(instance_number(breakable)))
+    draw_text(2, 180,"FPS: " + string(fps) + "#X: " + string(x) + "#Y: " + string(y) + "#key_timer: " + string(key_timer) + "#floor_tiles: " + string(instance_number(floor_tile)) + "#enemies: " + string(instance_number(enemy_parent)) + "#items: " + string((instance_number(item_parent))) + "#enemy_spawn_chance: " + string(enemy_spawn_chance) + "#enemy_percent: " + string(enemy_percent) + "#walls: " + string(instance_number(wall)) + "#torches: " + string(instance_number(torch)) + "#hunger_time/hunger_max: " + string(hunger_time) + "/" + string(hunger_max) + "#elite_spawn_chance: " + string((14+floor(player.floors/5) * 2)) + "%#breakables: " + string(instance_number(breakable))+ "#max_perk_page: " +string(max_perk_page))
 }
 if(!instance_exists(menu_parent))
 {
@@ -1413,11 +1432,11 @@ if(draw_char_sheet)
         }
     }
     draw_set_halign(fa_center)
-    if(max_perk_page = 0) draw_text(1480, 180, "Perks")
+    if(max_perk_page = 0 or ds_list_size(perks_gained) &lt; 11) draw_text(1480, 180, "Perks")
     else
     {
         if(perk_page = 0) draw_text(1480, 180, "  Perks (" + string(perk_page+1) + ") &gt;")
-        else if(perk_page &gt; 0 and perk_page &lt; max_perk_page) draw_text(1480, 180, "&lt; Perks (" + string(perk_page+1) + ") &gt;")
+        else if(perk_page &gt; 0 and perk_page &lt; max_perk_page and ds_list_size(perks_gained)/10 != floor(ds_list_size(perks_gained)/10)) draw_text(1480, 180, "&lt; Perks (" + string(perk_page+1) + ") &gt;")
         else draw_text(1480, 180, "&lt; Perks (" + string(perk_page+1) + ")  ")
     }
     draw_set_halign(fa_left)

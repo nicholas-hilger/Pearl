@@ -44,5 +44,5 @@ add_perk(perk.messy_eater, "Messy Eater", "Eating may drop Food Scrap.", "Whenev
 add_perk(perk.all_in, "All In", "Deal more dmg, take 1 EN dmg when hit.", "You're not one to half-ass things. You push yourself to the limit to deal more damage, but the toll this takes on your body means you take 1 EN damage whenever you get hit.", "all_in")
 
 add_perk(perk.fearless, "Fearless", "Do more dmg with 1-handed weapons when you don't have a shield equipped." ,"Shields are for the foolish, the weak, and people in funny green hats. You deal more damage with one-handed weapons if you don't have a shield equipped.", "fearless")
-add_perk(perk.dog_best_friend, "Dog's BFF", "Half-price inn", "You are a friend to all dogs, but a BEST friend to one dog in particular. Your stays at the inn are now half off.", "dog_bff")
-add_perk(perk.naturalist, "Naturalist", "Increased resists without armor", "Armor feels constricting, useless, and tacky to you. Your base resists are increased when you aren't wearing armor.", "naturalist")
+add_perk(perk.dog_best_friend, "Dog's BFF", "Half-price stays at the inn.", "You are a friend to all dogs, but a BEST friend to one dog in particular. Your stays at the inn are now half off.", "dog_bff")
+add_perk(perk.naturalist, "Naturalist", "Increased resists without armor.", "Armor feels constricting, useless, and tacky to you. Your base resists are increased when you aren't wearing armor.", "naturalist")
