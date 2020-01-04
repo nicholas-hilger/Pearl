@@ -17,6 +17,7 @@ enum buff
     second_chance_debuff,
     guardian_angel_debuff,
     enraged,
+    sated,
     total
 }
 

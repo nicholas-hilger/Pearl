@@ -71,6 +71,7 @@ if(place_meeting(x,y,player) and bloodied and player.status = "VAMP")
     bloodied = false
     if(player.sated_timer = 0)
     {
+        player.blood_consumed++
         player.hp += floor(player.max_hp*0.01)
         player.energy++
     }

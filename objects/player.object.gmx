@@ -841,11 +841,21 @@ if(loading_time = 0 and (moved or waitKey or (waitKeyHeld and canPress)) and !co
     if(shield = item.druidic_shield) hunger_max = 30
     else if(status = "VAMP") hunger_max = 10
     else hunger_max = 20
+    
+    if(blood_consumed = 5)
+    {
+        blood_consumed = 0
+        sated_timer = 30
+        gain_buff(buff.sated, 30)
+    }
+    
+    if(sated_timer &gt; 0) sated_timer--
+    
     if(hunger_time &gt;= hunger_max and energy &gt; 0 and room != town) 
     {
         if(status = "VAMP")
         {
-            
+            if(blood_consumed &gt; 0) blood_consumed--
         }
         energy--
         hunger_time = 0

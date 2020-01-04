@@ -15,3 +15,4 @@ add_buff(buff.poisoned, "Poisoned", "Lose 1% of your max HP every minute.", s_po
 add_buff(buff.second_chance_debuff, "Second Chance", "You survived a brush with death and need to heal.", s_second_chance)
 add_buff(buff.guardian_angel_debuff, "Angel's Rest", "Your Guardian Angel needs rest.", s_guardian_angel)
 add_buff(buff.enraged, "Enraged", "Double dmg taken and received. More foul language.", s_enraged)
+add_buff(buff.sated, "Sated", "Consuming blood won't heal right now.", s_sated_icon)

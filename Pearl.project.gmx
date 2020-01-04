@@ -225,6 +225,7 @@
       <sprite>sprites\s_second_chance</sprite>
       <sprite>sprites\s_guardian_angel</sprite>
       <sprite>sprites\s_enraged</sprite>
+      <sprite>sprites\s_sated_icon</sprite>
     </sprites>
     <sprites name="breakables">
       <sprite>sprites\s_armor_rack</sprite>
