@@ -39,6 +39,7 @@ enum perk
     dog_best_friend,
     naturalist,
     cutpurse,
+    raimifications,
     total
 }
 

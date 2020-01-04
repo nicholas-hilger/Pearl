@@ -280,6 +280,21 @@ if(hp &lt;= 0)
             }
         }
     }
+    if(list_contains(player.perks_gained, perk.raimifications))
+    {
+        blood_chance = irandom(100)
+        if(blood_chance &lt; 7)
+        {
+            with(floor_tile)
+            {
+                if(point_distance(x,y,other.x,other.y) &lt; 128) bloodied = true
+            }
+            with(wall)
+            {
+                if(point_distance(x,y,other.x,other.y) &lt; 128) bloodied = true
+            }
+        }
+    }
     if(irandom(100) &lt; 30) instance_create(x,y,corpse)
     instance_destroy()
 }

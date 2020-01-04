@@ -318,6 +318,11 @@ if(attacker = player)
             }
         }
     }
+    
+    if(list_contains(player.perks_gained, perk.raimifications)) 
+    {
+        dmg = ceil(dmg*1.10)
+    }
     if(list_contains(player.perks_gained, perk.cutpurse))
     {
         steal_chance = irandom(100)
