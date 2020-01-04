@@ -16,7 +16,7 @@ if(list_contains(player.perks_gained, perk.capitalist) and player.floors%3 = 0) 
 
 if(merchant_chance < 15 and !list_contains(player.perks_gained, perk.communist))
 {
-    ft = instance_find(floor_tile, irandom(instance_number(floor_tile)))
+    ft = instance_find(floor_tile, irandom(instance_number(floor_tile))-1)
     instance_create(ft.x,ft.y,dungeon_merchant)
     for( i = -32; i < 64; i += 32)
     {

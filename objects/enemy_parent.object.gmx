@@ -206,7 +206,7 @@ if(hp &lt;= 0)
         extra_xp_chance = irandom(100)
         if(extra_xp_chance &lt; 10)
         {
-            ds_list_insert(player.messages, 0, "Starcutter gains you extra XP!")
+            ds_list_insert(player.messages, 0, "Starcutter grants you extra XP!")
             total_xp *= 2
         }
     }
@@ -220,7 +220,7 @@ if(hp &lt;= 0)
         if(stat_up = "Wis") player.wisdom++
         ds_list_insert(player.messages, 0, "The power of Gotterdammerung increases your " + string(stat_up) + "!")
     }
-    if(player.lvl &lt; player.max_level) player.xp += total_xp
+    if(player.lvl &lt; player.max_level and !list_contains(player.perks_gained, perk.instant_gratification) and player.status != "VAMP") player.xp += total_xp
     ds_list_insert(player.messages, 0, string(name) + " dies.")
     player.kills++
     if(money_taken &gt; 0)

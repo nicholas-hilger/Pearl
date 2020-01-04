@@ -240,6 +240,7 @@ angel_heal_timer = 0
 current_money = money
 
 money_timer = 0
+can_move = true
 </string>
           </argument>
         </arguments>
@@ -508,7 +509,7 @@ if(draw_char_sheet)
     }
 }
 
-if(loading_time = 0 and !draw_char_sheet and !instance_exists(menu_parent) and !console.vis and !instance_exists(hurt_text) and !instance_exists(selector_parent) and !instance_exists(dungeon_carver) and !instance_exists(welcome_screen) and !instance_exists(changelog_screen))
+if(loading_time = 0 and !draw_char_sheet and !instance_exists(menu_parent) and !console.vis and !instance_exists(hurt_text) and !instance_exists(selector_parent) and !instance_exists(dungeon_carver) and !instance_exists(welcome_screen) and !instance_exists(changelog_screen) and can_move)
 {
     if(upKey or (upKeyHeld and canPress))
     {
@@ -806,7 +807,8 @@ if((moved or waitKey or (waitKeyHeld and canPress)) and !console.vis and !draw_c
     }
     with(enemy_parent) act()
     
-    if(shield = item.druidic_shield) hunger_max = 30
+    if(shield = item.druidic_shield) hunger_max = 40
+    else if(status = "VAMP") hunger_max = 35
     else hunger_max = 20
     if(hunger_time &gt;= hunger_max and energy &gt; 0 and room != town) 
     {
@@ -1342,8 +1344,11 @@ if(draw_char_sheet)
     draw_rectangle(9,174,1050, 1074, true)
     draw_rectangle(1051,174,1909, 1074, true)
     
+    if(status = "OK") transform_string = ""
+    if(status = "VAMP") transform_string = "Vampire"
+    
     draw_set_halign(fa_left)
-    draw_text(12, 180, string(name) + ", Level " + string(lvl) + " " + string(global.class_index[# job, class_stat.name]) + "")
+    draw_text(12, 180, string(name) + ", Level " + string(lvl) + " " + string(global.class_index[# job, class_stat.name]) + " " + string(transform_string))
     draw_text(12, 228, "Damage:")
     draw_set_color(c_red)
     draw_text(12,260, "Cut:    " + string(cut))
@@ -1496,6 +1501,12 @@ if(invincibility_timer &gt; 0)
         rainbow_color = make_colour_hsv(irandom(255), 200, 255)
     }
     image_blend = rainbow_color
+    draw_self()
+}
+
+else if(status = "VAMP")
+{
+    sprite_index = s_vampire_playable
     draw_self()
 }
 

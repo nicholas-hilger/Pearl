@@ -144,7 +144,7 @@ if(attacker = player)
 
     if(player.weapon = item.none) 
     {
-        dmg = round(strength)
+        dmg = round(strength) + irandom(5)
         if(list_contains(player.perks_gained, perk.brawler))
         {
             dmg = ceil(dmg*1.25)
@@ -170,9 +170,9 @@ if(attacker = player)
     
     else if(!weapon_is_gun and !weapon_is_staff and player.weapon != item.none)
     {
-        if(main_dmg = cut) dmg += round(dexterity) + irandom(3)
-        else if(main_dmg = blunt) dmg += round(strength) + round(strength*(1.2*player.berserking)) + irandom(3)
-        else if(main_dmg = pierce) dmg += round(perception) + irandom(3)
+        if(main_dmg = cut) dmg += round(dexterity) + irandom(5)
+        else if(main_dmg = blunt) dmg += round(strength) + round(strength*(1.2*player.berserking)) + irandom(5)
+        else if(main_dmg = pierce) dmg += round(perception) + irandom(5)
         else if(main_dmg = magic and global.item_index[#player.weapon, item_stat.enchanted] = true) dmg += round(wisdom/2) + irandom(5)
         
         if(global.item_index[#player.weapon, item_stat.enchanted] = true) dmg += magic 
@@ -295,6 +295,27 @@ if(attacker = player)
         if(player.shield = item.none and global.item_index[# player.weapon, item_stat.hands] = 1)
         {
             dmg = round(dmg*1.2)
+        }
+    }
+    if(player.status = "VAMP")
+    {
+        if(controller.hour >= 8 and controller.hour <= 20)
+        {
+            dmg = round(dmg*0.5)
+        }
+        else
+        {
+            dmg = round(dmg *1.5)
+        }
+        if(player.weapon = item.none)
+        {
+            leech_chance = irandom(100)
+            if(leech_chance < 15)
+            {
+                ds_list_insert(player.messages, 0, "You leech some health and energy!")
+                player.hp += round(dmg/20)
+                player.energy += round(dmg/30)   
+            }
         }
     }
 }

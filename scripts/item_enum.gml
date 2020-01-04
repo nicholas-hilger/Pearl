@@ -12,6 +12,7 @@ enum item
     tome_stealth,
     rusty_saber,
     infantry_blade,
+    vampire_blood,
     ingot_shield,
     bowie_knife,
     sadist_scimitar,

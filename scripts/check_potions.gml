@@ -89,10 +89,14 @@ if(food = item.ironbark_brew)
 
 if(food = item.liquid_knowledge)
 {
-    xp_gained = round(player.max_xp *0.25)
-    ds_list_insert(player.messages, 0, "You feel a rush of insight...!")
-    ds_list_insert(player.messages, 0, "You gain " + string(xp_gained) + " XP!")
-    player.xp += xp_gained
+    if(player.lvl < player.max_level and !list_contains(player.perks_gained, perk.instant_gratification) and player.status != "VAMP")
+    {
+        xp_gained = round(player.max_xp *0.25)
+        ds_list_insert(player.messages, 0, "You feel a rush of insight...!")
+        ds_list_insert(player.messages, 0, "You gain " + string(xp_gained) + " XP!")
+        player.xp += xp_gained
+    }
+    else ds_list_insert(player.messages, 0, "The potion seems to have no effect on you...")
 }   
 
 if(food = item.enchanted_salve)
@@ -138,5 +142,31 @@ if(food = item.perky_pop)
         check_perks(pid)
         ds_list_delete(player.perks_list, perk_deleted)
         ds_list_insert(player.messages, 0, "You gain the perk " + string(perk_name) + "!")
+    }
+}
+
+if(food = item.vampire_blood)
+{
+    if(player.status = "OK")
+    {
+        with(player)
+        {
+            status = "VAMP"
+            perception *= 2
+            wisdom *= 2
+            strength *= 2
+            dexterity *= 2
+            max_energy += 10
+            max_hp += 50
+            hp = max_hp
+            energy = max_energy
+            xp = 0
+            instance_destroy(inventory_box)
+            instance_create(x,y,vampire_msg)
+        }
+    }
+    else
+    {
+        ds_list_insert(player.messages, 0, "The blood seems to go inert when you drink it...")
     }
 }

@@ -32,7 +32,7 @@ add_enemy(enemy.revenant, "Revenant", "An undead warrior that retains memories o
 add_enemy(enemy.cultist, "Cultist", "An insane, death-worshipping human.", 250, 4, 5, 0, 0, 1, 0.75, 0.75, 0.5, 45, item.none, 25, enemy_race.human, 2, s_cultist, 1, "cultist")
 add_enemy(enemy.corpserat, "Corpserat", "A rat that has been fattened and corrupted on the flesh of the dead.", 150, 3, 0, 2, 1, 1, 0.5, 0.5, 1.5, 40, item.none, 18, enemy_race.beast, 1, s_corpserat, 1, "corpserat")
 add_enemy(enemy.demon_knight, "Demon Knight", "Not to be confused with demonic metal.", 300, 4, 6, 0, 2, 1, 1.5, 0.75, 1.5, 40, item.none, 20, enemy_race.demon, 2, s_demon_knight, 1, "demon_knight")
-add_enemy(enemy.vampire, "Vampire", "A pale, nocturnal sucker of blood.", 444, 0, 0, 8, 5, 0.75, 2, 0.25, 3, 66, item.none, 15, enemy_race.gothic, 2, s_vampire, 1, "vampire")     
+add_enemy(enemy.vampire, "Vampire", "A pale, nocturnal sucker of blood.", 444, 0, 0, 8, 5, 0.75, 2, 0.25, 3, 66, item.vampire_blood, 25, enemy_race.gothic, 2, s_vampire, 1, "vampire")     
 
 //Graveyard Bosses
 add_enemy(enemy.reaper, "Reaper", "A high-ranking agent of Death.", 444, 13, 0, 0, 4, 4, 4, 4, 4, 1200, item.grim_scythe, 18, enemy_race.cosmic, 2, s_reaper, 1, "reaper")

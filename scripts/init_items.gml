@@ -172,6 +172,8 @@ add_food(item.mana_treat, "Mana Bun", "A large bun covered in sweet glaze. These
 40, 0, 0, 0,  0, 0, 50, s_food, "mana_treat")
 add_food(item.jelly, "Jelly", "Some jelly cultivated from a slime. It has a smooth, pleasent texture, and tastes like delicious candied apples.##Nah, just kidding. It's gritty and tastes like raw sewage. But, it IS nutritious, so bottoms up...",
 10, 0, 0, 0, 0, 10, 100, s_jelly, "jelly")
+add_food(item.food_scrap, "Scrap of Food", "An unidentifiable scrap of food. It looks like your messy eating habits have paid off.", 10, 0, 0, 0, 0, 0, 0, s_food, "food_scrap")
+
 
 //Potions
 add_food(item.musclemix, "Muscle Mix", "A mix of proteins, meat, raw eggs, and sharp rocks that will give you an extra point in Strength.", 
@@ -201,7 +203,8 @@ add_food(item.enchanted_salve, "Enchanted Salve", "A salve that has been foritif
 add_food(item.water, "Jug o' Water", "It's just a jug of water. #...or is it?", 2, 0, 0, 0, 0, 2, 20, s_water_jug, "water")
 add_food(item.star_essence, "Star Essence", "The distilled essence of a shooting star, said to grant invincibility to any who dare consume it. Some have even claimed to hear music when under the effects of this mysterious substance.", 10, 0, 0, 0, 0, 10, 650, s_star_essence, "star_essence")
 add_food(item.perky_pop,  "Perky Pop", "This odd, fizzy drink will imbue you with a random perk. It will only give you a perk you don't own, and if there are no available perks left, it will instead raise you Dex, Per, Wis, and Str by 2.", 0, 0, 0, 0, 0, 0, 4000, s_pop, "perky_pop")
-add_food(item.food_scrap, "Scrap of Food", "An unidentifiable scrap of food. It looks like your messy eating habits have paid off.", 10, 0, 0, 0, 0, 0, 0, s_food, "food_scrap")
+add_food(item.vampire_blood, "Vampire Blood", "A vial of blood, obtained from a powerful vampire. You swear you can hear the blood calling out to you, promising immortality and unholy power...", 0, 0, 0, 0, 0, 0, 4444, s_vampire_blood, "vampire_blood")
+
 
 //Tomes
 add_tome(item.tome_fireball, "Tome of Fireball", "A tome that can teach you how to cast the spell Fireball.", spell.fireball, 400, s_tome, "tome_fireball")

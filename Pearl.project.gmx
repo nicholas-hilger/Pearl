@@ -32,6 +32,7 @@
       <sprite>sprites\s_soldier</sprite>
       <sprite>sprites\s_corpse</sprite>
       <sprite>sprites\s_demon_form</sprite>
+      <sprite>sprites\s_vampire_playable</sprite>
       <sprite>sprites\s_charmask</sprite>
     </sprites>
     <sprites name="merchants">
@@ -96,6 +97,7 @@
       <sprite>sprites\s_enchanted_salve</sprite>
       <sprite>sprites\s_water_jug</sprite>
       <sprite>sprites\s_star_essence</sprite>
+      <sprite>sprites\s_vampire_blood</sprite>
     </sprites>
     <sprites name="env">
       <sprite>sprites\s_foyer_wall</sprite>
@@ -399,6 +401,7 @@
       <object>objects\console</object>
       <object>objects\interactable</object>
       <object>objects\welcome_screen</object>
+      <object>objects\vampire_msg</object>
       <object>objects\changelog_screen</object>
       <object>objects\describable</object>
       <object>objects\display_manager</object>
