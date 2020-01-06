@@ -59,7 +59,9 @@ draw_set_font(hud_font)
 draw_set_halign(fa_left)
 
 draw_text_ext(11, 200, "Changelog for Alpha "  +string(global.ver_number) + " (" + string(global.ver_title) + "):
+#-Added the Vampire transformation. By drinking Vampiric Blood, you can become a Vampire, a glass cannon with a hunger for blood
 #-
+#-Added some more staves and 'wands', espcially some that offer physical and magic damage potential
 #-Added five new perks: Dog's BFF, Cutpurse, Winging It, Raimifications, and Naturalist
 Hit [Enter] to dismiss this screen)", 24, 1890)
 

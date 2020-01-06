@@ -44,6 +44,9 @@ global.universal_pool[39] = item.blackjack
 global.universal_pool[40] = item.winged_spear
 global.universal_pool[41] = item.bowie_knife
 global.universal_pool[42] = item.scrap_targe
+global.universal_pool[43] = item.mystic_dagger
+global.universal_pool[44] = item.basher_staff
+global.universal_pool[45] = item.heavy_spellbook
 
 //Mid Pool: Higher end stuff, but not endgame-rated
 //global.mid_pool[] = 
@@ -82,6 +85,8 @@ global.mid_pool[31] = item.puncture
 global.mid_pool[32] = item.obelisk
 global.mid_pool[33] = item.staff_sight
 global.mid_pool[34] = item.ingot_shield
+global.mid_pool[35] = item.heavy_spellbook
+global.mid_pool[36] = item.tentacle_wand
 
 //Late pool: getting through the near-end of the dungeon
 //global.late_pool[] = 
@@ -105,8 +110,8 @@ global.late_pool[16] = item.sadist_scimitar
 global.late_pool[17] = item.lifedrinker
 global.late_pool[18] = item.shattermallet
 global.late_pool[19] = item.ethereal_greataxe
-global.late_pool[20] = item.rogues_pick    
-
+global.late_pool[20] = item.rogues_pick
+global.late_pool[21] = item.erudite_smasher
 
 //End Pool: Endgame items
 //global.end_pool[] = 

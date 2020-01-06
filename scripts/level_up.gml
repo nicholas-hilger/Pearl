@@ -82,7 +82,7 @@ else if(player.job = class.arcanist)
 {
     strength_gain = irandom(1)
     dexterity_gain = irandom(1)
-    perception_gain = irandom(1) + 2
+    perception_gain = irandom(2)
     wisdom_gain = irandom(2) + 2
     hp_gain = 2
 }
