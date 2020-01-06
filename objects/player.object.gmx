@@ -412,6 +412,7 @@ if(hp &lt;= 0 and !godmode_enabled)
         ds_list_clear(perks_gained)
         ds_list_clear(perks_list)
         ds_list_clear(inventory)
+        ds_list_add(inventory, item.none)
         weapon = item.none
         shield = item.none
         armor = item.none
