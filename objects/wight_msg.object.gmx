@@ -54,20 +54,20 @@ if((keyboard_check_pressed(vk_enter) or gamepad_button_check_pressed(0, gp_face1
           <argument>
             <kind>1</kind>
             <string>draw_set_color(c_black)
-draw_rectangle(309, 175, 1700, 600, false)  
+draw_rectangle(309, 175, 1700, 700, false)  
 
 draw_set_color(c_white)
-draw_rectangle(308,174, 1699, 599, true)
+draw_rectangle(308,174, 1699, 699, true)
 
 
 draw_set_font(hud_font)
 draw_set_halign(fa_left)
 
-draw_text_ext(310, 200, "Upon devouring the vampiric blood, you find yourself transforming into a VAMPIRE!
-#As a Vampire, you have gained a massive increase to your stats, but you will no longer gain experience or level up!
-#Additionally, food will replenish your health for a quarter of its normal value and it will no longer replenish ANY of your energy! And your unholy hunger means you lose energy at a FASTER rate!
-#However, all is not lost! You will gain a small amount of health and energy when stepping on any bloody tiles. Also, if you attack anything while unarmed, you have a chance to leech some health and energy from the enemy!
-#As a final note, you will now deal more damage at night, and less during the day.
+draw_text_ext(310, 200, "You died...you were found...buried...and then you rotted...and then the Skull Talisman you consumed kicked in!
+#Now, you have been resurrected as a WIGHT! Your stats have been reduced, and you've been flung back to level 1. Also, your perks wore off because of that minor case of death you had. Also, your erstwhile merchant 'friends' absolutely looted your corpse before burying you.
+#You can now level up and select new perks on leveling, but there's a catch: your new body was fortified by the talisman, but it will begin to ROT! For every level you gain, you now LOSE HP instead of gaining it! However, your other stats increase like they used to.
+#As a small consolation, you no longer lose energy to hunger, and any warps you unlocked are still available. 
+#Time is of the essence, you affront to mortality!
 #(Hit [Enter] to dismiss this screen.)", 24, 1350)
 </string>
           </argument>

@@ -19,6 +19,7 @@ dexterity = ini_read_real("Save1","dexterity",5)
 essence = ini_read_real("Save1","essence",0)
 highest_floor = ini_read_real("Save1","highest_floor",1)
 status = ini_read_string("Save1","status","OK")
+wight_wait = ini_read_real("Save1","wight_wait",false)
 
 xp = ini_read_real("Save1","cur_xp",0)
 max_xp = ini_read_real("Save1","max_xp",30)

@@ -24,6 +24,7 @@ enum item
     traitor_falchion,
     basher_staff,
     mystic_dagger,
+    skull_talisman,
     erudite_smasher,
     heavy_spellbook,
     tentacle_wand,

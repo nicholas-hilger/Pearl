@@ -157,6 +157,8 @@ else
     with(floor_warp) instance_destroy()
     controller.hour = 8
     controller.minute = 0
+    
+    wight_wait = false
 }
 
 defense = 0
@@ -381,17 +383,58 @@ energy = max_energy
 
 if(hp &lt;= 0 and !godmode_enabled) 
 {
-    hp = 0
-    file_delete("save.sav")
-    instance_change(player_corpse, true)
-    with(player_corpse)
+    if(wight_wait)
     {
-        total_money = player.total_money
-        total_dmg_dealt = player.total_dmg_dealt
-        kills = player.kills
-        days = player.days
-        lvl = player.lvl
-        perks_gained = player.perks_gained
+        status = "SKEL"
+        max_hp = 500
+        hp = max_hp
+        room = town
+        x = 464
+        y = 528
+        lvl = 1
+        xp = 0
+        max_xp = 65
+        money = round(money/2)
+        dexterity = round(dexterity/2)
+        perception = round(perception/2)
+        strength = round(strength/2)
+        wisdom = round(wisdom/3)
+        
+        for(i = 0; i &lt; ds_list_size(equipped); i++)
+        {
+            ds_list_replace(equipped, i, item.none)
+        }
+        
+        days += 7
+        controller.hour = 4
+        controller.minute = 44
+        
+        ds_list_clear(perks_gained)
+        ds_list_clear(perks_list)
+        ds_list_clear(inventory)
+        weapon = item.none
+        shield = item.none
+        armor = item.none
+        for(i = 1; i &lt; perk.total; i++)
+        {
+            ds_list_add(perks_list, i)
+        }
+        ds_list_shuffle(perks_list)
+    }
+    else
+    {
+        hp = 0
+        file_delete("save.sav")
+        instance_change(player_corpse, true)
+        with(player_corpse)
+        {
+            total_money = player.total_money
+            total_dmg_dealt = player.total_dmg_dealt
+            kills = player.kills
+            days = player.days
+            lvl = player.lvl
+            perks_gained = player.perks_gained
+        }
     }
 }
 
@@ -857,7 +900,7 @@ if(loading_time = 0 and (moved or waitKey or (waitKeyHeld and canPress)) and !co
         {
             if(blood_consumed &gt; 0) blood_consumed--
         }
-        energy--
+        if(status != "SKEL") energy--
         hunger_time = 0
     }
     else if(controller.minute%10 = 0 and energy = 0 and room != town) 
@@ -1389,11 +1432,13 @@ if(draw_char_sheet)
     draw_rectangle(9,174,1050, 1074, true)
     draw_rectangle(1051,174,1909, 1074, true)
     
-    transform_string = ""
-    if(status = "VAMP") transform_string = "Vampire"
+    transform_string_1 = ""
+    transform_string_2 = ""
+    if(status = "VAMP") transform_string_2 = "Vampire"
+    if(status = "SKEL") transform_string_1 = " Wight "
     
     draw_set_halign(fa_left)
-    draw_text(12, 180, string(name) + ", Level " + string(lvl) + " " + string(global.class_index[# job, class_stat.name]) + " " + string(transform_string))
+    draw_text(12, 180, string(name) + ", Level " + string(lvl) + string(transform_string_1) + string(global.class_index[# job, class_stat.name]) + " " + string(transform_string_2))
     draw_text(12, 228, "Damage:")
     draw_set_color(c_red)
     draw_text(12,260, "Cut:    " + string(cut))
@@ -1549,9 +1594,15 @@ if(invincibility_timer &gt; 0)
     draw_self()
 }
 
-else if(status = "VAMP")
+else if(status = "VAMP" and hp &gt; 0)
 {
     sprite_index = s_vampire_playable
+    draw_self()
+}
+
+else if(status = "SKEL" and hp &gt; 0)
+{
+    sprite_index = s_wight_knight
     draw_self()
 }
 

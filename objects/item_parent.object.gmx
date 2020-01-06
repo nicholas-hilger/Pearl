@@ -110,7 +110,7 @@ if(life = 1)
 if(life &gt;= 1)
 {  
     tier = global.item_index[# iid, item_stat.tier]
-    if(point_distance(x,y,player.x,player.y) &lt;= (player.fov) and !collision_line(x,y,player.x,player.y,wall,true,true) and tier != 0 and global.loot_particles)
+    if(point_distance(x,y,player.x,player.y) &lt;= (player.fov) and !collision_line(x,y,player.x,player.y,wall,true,true) and (tier != 0 or name = "Skull Talisman" or name = "Vampire Blood") and global.loot_particles)
     {
         for(i = 0; i &lt; irandom(4) + 3; i++)
         {

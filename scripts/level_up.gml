@@ -31,78 +31,89 @@ else max_xp *= 1.05
 
 max_xp = round(max_xp)
 
-if(player.job = class.berserker)
+if(status = "SKEL")
 {
     strength_gain = irandom(2) + 2
-    dexterity_gain = irandom(1) + 1
-    perception_gain = irandom(1) + 1
-    wisdom_gain = irandom(1)
-    hp_gain = 6
+    dexterity_gain = irandom(2) + 2
+    perception_gain = irandom(2) + 2
+    wisdom_gain = irandom(1) + 1
+    hp_gain = 3
 }
-
-else if(player.job = class.useless)
+else
 {
-    if(player.lvl < 25)
+    if(player.job = class.berserker)
+    {
+        strength_gain = irandom(2) + 2
+        dexterity_gain = irandom(1) + 1
+        perception_gain = irandom(1) + 1
+        wisdom_gain = irandom(1)
+        hp_gain = 6
+    }
+    
+    else if(player.job = class.useless)
+    {
+        if(player.lvl < 25)
+        {
+            strength_gain = irandom(1)
+            dexterity_gain = irandom(1)
+            perception_gain = irandom(1)
+            wisdom_gain = irandom(1)
+            hp_gain = 1
+        }
+        else
+        {
+            strength_gain = irandom(3) + 4
+            dexterity_gain = irandom(3) + 4
+            perception_gain = irandom(3) + 4
+            wisdom_gain = irandom(3) + 4
+            hp_gain = 7
+        }
+    }
+    
+    else if(player.job = class.rogue)
+    {
+        strength_gain = irandom(1)
+        dexterity_gain = irandom(1) + 1
+        perception_gain = irandom(2) + 2
+        wisdom_gain = irandom(1)
+        hp_gain = 2
+    }
+    
+    else if(player.job = class.adventurer)
+    {
+        strength_gain = irandom(2) + 1
+        dexterity_gain = irandom(2) + 2
+        perception_gain = irandom(2) + 1
+        wisdom_gain = irandom(1) + 1
+        hp_gain = 4
+    }
+    
+    else if(player.job = class.arcanist)
     {
         strength_gain = irandom(1)
         dexterity_gain = irandom(1)
+        perception_gain = irandom(2)
+        wisdom_gain = irandom(2) + 2
+        hp_gain = 2
+    }
+    
+    else if(player.job = class.slayer)
+    {
+        strength_gain = irandom(1) + 1
+        dexterity_gain = irandom(1) + 2
         perception_gain = irandom(1)
         wisdom_gain = irandom(1)
-        hp_gain = 1
+        hp_gain = 3
     }
-    else
+    
+    else if(player.job = class.soldier)
     {
-        strength_gain = irandom(3) + 4
-        dexterity_gain = irandom(3) + 4
-        perception_gain = irandom(3) + 4
-        wisdom_gain = irandom(3) + 4
-        hp_gain = 7
+        strength_gain = irandom(1) + 1
+        dexterity_gain = irandom(2) + 2
+        perception_gain = irandom(2) + 2
+        wisdom_gain = irandom(1) + 1
+        hp_gain = 3
     }
-}
-
-else if(player.job = class.rogue)
-{
-    strength_gain = irandom(1)
-    dexterity_gain = irandom(1) + 1
-    perception_gain = irandom(2) + 2
-    wisdom_gain = irandom(1)
-    hp_gain = 2
-}
-
-else if(player.job = class.adventurer)
-{
-    strength_gain = irandom(2) + 1
-    dexterity_gain = irandom(2) + 2
-    perception_gain = irandom(2) + 1
-    wisdom_gain = irandom(1) + 1
-    hp_gain = 4
-}
-
-else if(player.job = class.arcanist)
-{
-    strength_gain = irandom(1)
-    dexterity_gain = irandom(1)
-    perception_gain = irandom(2)
-    wisdom_gain = irandom(2) + 2
-    hp_gain = 2
-}
-
-else if(player.job = class.slayer)
-{
-    strength_gain = irandom(1) + 1
-    dexterity_gain = irandom(1) + 2
-    perception_gain = irandom(1)
-    wisdom_gain = irandom(1)
-    hp_gain = 3
-}
-
-else if(player.job = class.soldier)
-{
-    strength_gain = irandom(1) + 1
-    dexterity_gain = irandom(2) + 2
-    perception_gain = irandom(2) + 2
-    wisdom_gain = irandom(1) + 1
-    hp_gain = 3
 }
 
 //if(lvl%10 == 0) bonus = 1
@@ -126,6 +137,9 @@ if(!bonus)
 
 hp_gain += ceil(strength/10)
 hp_gain = round(hp_gain)
+
+if(status = "SKEL") hp_gain *= -1
+
 hp += hp_gain
 max_hp += round(hp_gain)
 
@@ -138,10 +152,14 @@ wisdom_mess = ""
 ds_list_insert(messages, 0, "Level Up!")
 
 if(hp_gain > 0) ds_list_insert(messages, 0, string("HP went up by " + string(hp_gain) + "!"))
+if(hp_gain < 0) ds_list_insert(messages, 0, string("HP decreased by " + string((hp_gain*-1)) + "..."))
 if(strength_gain > 0) ds_list_insert(messages, 0, string("Str went up by " + string(strength_gain) + "!"))
 if(wisdom_gain > 0) ds_list_insert(messages, 0, string("Wis went up by " + string(wisdom_gain) + "!"))
 if(perception_gain > 0) ds_list_insert(messages, 0, string("Per went up by " + string(perception_gain) + "!")) 
 if(dexterity_gain > 0) ds_list_insert(messages, 0, string("Dex went up by " + string(dexterity_gain) + "!"))
+
+if(max_hp < 10) max_hp = 10
+if(hp < 0) hp = 10
 
 with(instance_create(player.x,player.y-16,hurt_text))
 {

@@ -98,6 +98,7 @@
       <sprite>sprites\s_water_jug</sprite>
       <sprite>sprites\s_star_essence</sprite>
       <sprite>sprites\s_vampire_blood</sprite>
+      <sprite>sprites\s_skull_talisman</sprite>
     </sprites>
     <sprites name="env">
       <sprite>sprites\s_foyer_wall</sprite>
@@ -403,6 +404,7 @@
       <object>objects\interactable</object>
       <object>objects\welcome_screen</object>
       <object>objects\vampire_msg</object>
+      <object>objects\wight_msg</object>
       <object>objects\changelog_screen</object>
       <object>objects\describable</object>
       <object>objects\display_manager</object>

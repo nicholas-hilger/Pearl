@@ -13,7 +13,13 @@
   <code>if(!instance_exists(player)) instance_create(848,1552,player)
 audio_stop_all()
 audio_play_sound(mus_sargoza, 1, 1)
-with(player) save_game()</code>
+with(player) save_game()
+
+if(player.wight_wait = true and player.max_hp = 500)
+{
+    player.wight_wait = false
+    instance_create(464,528,wight_msg)
+}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -632,7 +638,7 @@ with(player) save_game()</code>
     <instance objName="describable" x="432" y="464" name="inst_F2DC90AE" locked="0" code="description = &quot;The headstone is too damaged to read...&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="describable" x="496" y="464" name="inst_CCD271BA" locked="0" code="description = &quot;The oldest grave here. Wonder who lies in it...&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="describable" x="240" y="464" name="inst_7829A237" locked="0" code="description = &quot;'Here lies Binyor; he was always willing to shoot'&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="describable" x="432" y="528" name="inst_CD4A527B" locked="0" code="description = &quot;'A nameless grave for those who fall in the Tower'&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="describable" x="432" y="528" name="inst_CD4A527B" locked="0" code="description = &quot;'A nameless grave for those who fall in the Tower'&quot;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="describable" x="336" y="528" name="inst_E569C22C" locked="0" code="description = &quot;'RIP Fiona, the Merchant Queen, founder of Sargoza'&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="describable" x="336" y="528" name="inst_C6C17D47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="describable" x="816" y="464" name="inst_948F87C4" locked="0" code="description = &quot;A formidable statue, watching those who enter the Tower.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

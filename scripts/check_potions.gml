@@ -168,3 +168,14 @@ if(food = item.vampire_blood)
         ds_list_insert(player.messages, 0, "The blood seems to go inert when you drink it...")
     }
 }
+
+if(food = item.skull_talisman)
+{
+    if(player.status != "SKEL" and player.wight_wait = false)
+    {
+        ds_list_insert(player.messages, 0, "The edible talisman melts in your mouth...")
+        ds_list_insert(player.messages, 0, "You feel odd and clammy.")
+        player.wight_wait = true
+    }
+    else ds_list_insert(player.messages, 0, "The sugary skull melts in your mouth, to no effect.")
+}

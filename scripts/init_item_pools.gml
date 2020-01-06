@@ -47,6 +47,7 @@ global.universal_pool[42] = item.scrap_targe
 global.universal_pool[43] = item.mystic_dagger
 global.universal_pool[44] = item.basher_staff
 global.universal_pool[45] = item.heavy_spellbook
+global.universal_pool[46] = item.wight_blade
 
 //Mid Pool: Higher end stuff, but not endgame-rated
 //global.mid_pool[] = 

@@ -5,7 +5,7 @@ add_enemy(enemy.skeleton, "Skeleton", "A spooky skeleton. Don't ask how it can m
 add_enemy(enemy.imp, "Imp", "An imp. Attacks with arcane bolts and insults.", 14, 0, 0, 0, 3, 1, 1, 1, 2, 7, item.none, 25, enemy_race.enchanted, 2, s_imp, 2, "imp")
 add_enemy(enemy.worm, "Worm", "A mutant worm. Its teeth have teeth...", 8, 3, 0, 2, 0, 1, 0.5, 0.75, 1, 5, item.none, 25, enemy_race.beast, 1, s_worm, 1, "worm")
 add_enemy(enemy.lesser_demon, "Lesser Demon", "A low-ranked demon.", 60, 0, 5, 0, 2, 1.3, 1.3, 1.3, 1.6, 12, item.none, 40, enemy_race.demon, 3, s_lesser_demon, 1, "lesser_demon")
-add_enemy(enemy.wight_knight, "Wight Knight", "A reanimated, elite Regent Knight.", 250, 10, 0, 3, 0, 1.3, 0.75, 0.9, 1.1, 30, item.wight_blade, 35, enemy_race.undead, 2, s_wight_knight, 1, "wight_knight") 
+add_enemy(enemy.wight_knight, "Wight Knight", "A reanimated, elite Regent Knight.", 250, 10, 0, 3, 0, 1.3, 0.75, 0.9, 1.1, 30, item.skull_talisman, 20, enemy_race.undead, 2, s_wight_knight, 1, "wight_knight") 
 
 //Foyer bosses
 add_enemy(enemy.monitor_eye, "Monitor Eye", "An all-seeing, evil eye.", 400, 0, 0, 0, 8, 1.1, 1.35, 0.5, 1.9, 200, item.tome_sense_monster, 30, enemy_race.enchanted, 2, s_monitor_eye, 2, "monitor_eye")

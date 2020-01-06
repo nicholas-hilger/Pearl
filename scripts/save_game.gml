@@ -21,6 +21,7 @@ ini_write_real("Save1","dexterity",player.dexterity)
 ini_write_real("Save1","essence",player.essence)
 ini_write_real("Save1","highest_floor",player.highest_floor)
 ini_write_string("Save1","status",player.status)
+ini_write_real("Save1","wight_wait",player.wight_wait)
 
 ini_write_real("Save1","cur_xp",player.xp)
 ini_write_real("Save1","max_xp",player.max_xp)
