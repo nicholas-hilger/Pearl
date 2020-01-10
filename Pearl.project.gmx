@@ -410,6 +410,7 @@
       <object>objects\display_manager</object>
       <object>objects\item_notification</object>
       <object>objects\loot_particle</object>
+      <object>objects\floor_identifier</object>
     </objects>
     <objects name="items">
       <object>objects\item_parent</object>

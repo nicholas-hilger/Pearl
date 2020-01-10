@@ -162,7 +162,7 @@ if(player.floors%5 = 0)
 
 for(i = 0; i < round(instance_number(wall)/60); i++)
 {
-    with(instance_find(wall,irandom(instance_number(wall)))) instance_change(torch, true)
+    if(player.floor_feeling != "Darkness") with(instance_find(wall,irandom(instance_number(wall)))) instance_change(torch, true)
 }
 
 room_speed = 60
@@ -173,3 +173,4 @@ with(instance_find(floor_tile,irandom(instance_number(floor_tile)-1)))
     player.y = y
 }
 
+instance_create(player.x, player.y-500, floor_identifier)

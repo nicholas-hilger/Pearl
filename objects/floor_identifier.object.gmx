@@ -3,11 +3,40 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1410065407</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(player.floors &lt; 6) area = "Foyer"
+else if(player.floors &lt; 11) area = "Mines"
+else if(player.floors &lt; 16) area = "Graveyard"
+else if(player.floors &lt; 21) area = "Barracks"
+else if(player.floors &lt; 26) area = "Administration"
+
+life = (5*60)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,7 +54,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if((keyboard_check_pressed(vk_enter) or gamepad_button_check_pressed(0, gp_face1)) and player.played_time) instance_destroy()
+            <string>life--
+
+if(life = 0) instance_destroy()
 </string>
           </argument>
         </arguments>
@@ -48,23 +79,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_black)
-draw_rectangle(10, 175, 1900, 1075, false)  
+            <string>draw_set_font(menu_font)
+draw_set_halign(fa_center)
+draw_set_valign(fa_center)
 
-draw_set_color(c_white)
-draw_rectangle(9,174, 1899, 1074, true)
+if(player.floor_feeling = "") text_outline(1920/2,300, string(area) + " " + string(player.floors%6), c_white)
 
+else text_outline(1920/2,300, string(area) + " " + string(player.floors%6) + "#Anomaly: " + string(player.floor_feeling), c_white)
 
-draw_set_font(hud_font)
 draw_set_halign(fa_left)
-
-draw_text_ext(11, 200, "Changelog for Alpha "  +string(global.ver_number) + " (" + string(global.ver_title) + "):
-#-Added the Vampire transformation. If you partake in a twisted eucharist, you can become a Vampire, a glass cannon with a hunger for blood
-#-Added the Wight transformation. Through strange means, you may find a new chance at life as a Wight...just watch the rot...
-#-Added some more staves and 'wands', espcially some that offer physical and magic damage potential
-#-Added five new perks: Dog's BFF, Cutpurse, Winging It, Raimifications, and Naturalist
-Hit [Enter] to dismiss this screen)", 24, 1890)
-
+draw_set_valign(fa_left)
 </string>
           </argument>
         </arguments>

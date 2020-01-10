@@ -245,6 +245,8 @@ current_money = money
 
 money_timer = 0
 can_move = true
+
+floor_feeling = ""
 </string>
           </argument>
         </arguments>
@@ -374,6 +376,13 @@ if(list_contains(perks_gained, perk.extra_pockets)) inventory_limit += 3
 if(list_contains(perks_gained, perk.communist)) inventory_limit += 1 
 if(weapon != item.staff_sight) fov = (floor(perception/30) + 4)*sprite_width
 else fov = (floor(perception/30) + 5)*sprite_width
+
+
+if(floor_feeling = "Darkness")
+{
+    if(weapon != item.staff_sight) fov = (floor(perception/30) + 2)*sprite_width
+    else fov = (floor(perception/30) + 3)*sprite_width
+}
 
 if(godmode_enabled) 
 {
@@ -1013,6 +1022,7 @@ if(stairsKey and!console.vis)
     {
         if(place_meeting(x,y,stairs)) 
         {
+            floor_feeling = ""
             room_goto(dungeon)
             x=0
             y=0
@@ -1026,12 +1036,19 @@ if(stairsKey and!console.vis)
         if(place_meeting(x,y,floor_warp))
         {
             instance_create(x,y,warp_menu)
+        }
+        floor_feeling_chance = irandom(100)
+        if(floor_feeling_chance &lt; 15)
+        {
+            floor_feeling_type = irandom(100)
+            if(floor_feeling_type &lt; 30) floor_feeling = "Darkness"
         }  
     }
     else
     {
         if(place_meeting(x,y,stairs)) 
         {
+            floor_feeling = ""
             room_restart()
             x = 0
             y = 0
@@ -1042,6 +1059,13 @@ if(stairsKey and!console.vis)
                 gain_buff(buff.stealth, 30)
             }
             if(floors &gt; highest_floor) highest_floor = floors
+        
+            floor_feeling_chance = irandom(100)
+            if(floor_feeling_chance &lt; 15)
+            {
+                floor_feeling_type = irandom(100)
+                if(floor_feeling_type &lt; 30) floor_feeling = "Darkness"
+            }  
         }
         if(place_meeting(x,y,town_checkpoint))
         {
