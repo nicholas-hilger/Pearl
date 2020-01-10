@@ -83,9 +83,12 @@ if(life = 0) instance_destroy()
 draw_set_halign(fa_center)
 draw_set_valign(fa_center)
 
-if(player.floor_feeling = "") text_outline(1920/2,300, string(area) + " " + string(player.floors%6), c_white)
+floor_num = player.floors%5
+if(floor_num = 0) floor_num = 5
 
-else text_outline(1920/2,300, string(area) + " " + string(player.floors%6) + "#Anomaly: " + string(player.floor_feeling), c_white)
+if(player.floor_feeling = "") text_outline(1920/2,300, string(area) + " " + string(floor_num), c_white)
+
+else text_outline(1920/2,300, string(area) + " " + string(floor_num) + "#Anomaly: " + string(player.floor_feeling), c_white)
 
 draw_set_halign(fa_left)
 draw_set_valign(fa_left)

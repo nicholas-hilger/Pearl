@@ -40,6 +40,8 @@ is_enemy = true
 elite = irandom(99) + 1
 elite_spawn_chance = (floor(player.floors/5) * 2)
 
+if(player.floor_feeling = "Den of Elites") elite -= 15
+
 is_elite = false
 
 color_mod = c_white

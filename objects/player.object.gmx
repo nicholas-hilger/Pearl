@@ -438,6 +438,7 @@ if(hp &lt;= 0 and !godmode_enabled)
         instance_change(player_corpse, true)
         with(player_corpse)
         {
+            floor_feeling = player.floor_feeling
             total_money = player.total_money
             total_dmg_dealt = player.total_dmg_dealt
             kills = player.kills
@@ -911,6 +912,7 @@ if(loading_time = 0 and (moved or waitKey or (waitKeyHeld and canPress)) and !co
             if(blood_consumed &gt; 0) blood_consumed--
         }
         if(status != "SKEL") energy--
+        if(floor_feeling = "Poisonous Gas" and invincibility_timer = 0) hp -= round(max_hp*0.03)
         hunger_time = 0
     }
     else if(controller.minute%10 = 0 and energy = 0 and room != town) 
@@ -1038,10 +1040,12 @@ if(stairsKey and!console.vis)
             instance_create(x,y,warp_menu)
         }
         floor_feeling_chance = irandom(100)
-        if(floor_feeling_chance &lt; 15)
+        if(floor_feeling_chance &lt; 10)
         {
             floor_feeling_type = irandom(100)
             if(floor_feeling_type &lt; 30) floor_feeling = "Darkness"
+            else if(floor_feeling_type &lt; 50) floor_feeling = "Den of Elites"
+            else if(floor_feeling_type &lt; 75) floor_feeling = "Poisonous Gas"
         }  
     }
     else
@@ -1061,10 +1065,13 @@ if(stairsKey and!console.vis)
             if(floors &gt; highest_floor) highest_floor = floors
         
             floor_feeling_chance = irandom(100)
-            if(floor_feeling_chance &lt; 15)
+            floor_feeling_chance = irandom(100)
+            if(floor_feeling_chance &lt; 20)
             {
                 floor_feeling_type = irandom(100)
                 if(floor_feeling_type &lt; 30) floor_feeling = "Darkness"
+                else if(floor_feeling_type &lt; 50) floor_feeling = "Den of Elites"
+                else if(floor_feeling_type &lt; 75) floor_feeling = "Poisonous Gas"
             }  
         }
         if(place_meeting(x,y,town_checkpoint))
@@ -1443,6 +1450,15 @@ if(!instance_exists(menu_parent))
             text_outline(70,224+(i*80),string(ds_grid_get(buffs,i,1)),c_white)
         }
     }   
+}
+
+if(floor_feeling = "Poisonous Gas" and !instance_exists(dungeon_carver))
+{
+    draw_set_color(c_olive)
+    draw_set_alpha(0.25)
+    draw_rectangle(-1,-1,1921,1081,false)
+    draw_set_alpha(1)
+    draw_set_color(c_white)
 }
 
 if(draw_char_sheet)
