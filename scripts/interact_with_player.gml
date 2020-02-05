@@ -2,12 +2,15 @@
 
 if(object_is_ancestor(self.object_index, enemy_parent) or self.object_index = enemy_parent)
 {
-    //ds_list_insert(player.messages, 0, string(self.name) + "'s cut, beginning: " + string(self.cut))
-    with(player) 
+    if(hp > 0)
     {
-        attack(player, other)
+        //ds_list_insert(player.messages, 0, string(self.name) + "'s cut, beginning: " + string(self.cut))
+        with(player) 
+        {
+            attack(player, other)
+        }
+        player.moved = 1
     }
-    player.moved = 1
 }
 
 else if(object_is_ancestor(self.object_index, merchant))

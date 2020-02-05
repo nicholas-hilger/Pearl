@@ -52,6 +52,16 @@ add_enemy(enemy.commander, "Commander", "They didn't earn their rank by scrubbin
 //Barracks Bosses
 add_enemy(enemy.war, "War", "An aggressive Horseman of the Apocalypse.", 8000, 13, 8, 0, 0, 2, 2, 1.5, 1, 3000, item.none, 17, enemy_race.cosmic, 2, s_war, 1, "war")
 
+//The End Enemies
+add_enemy(enemy.raw_demon, "Raw Demon", "A strange, metallic demon...", 1200, 16, 0, 0, 6, 1.5, 1.5, 1.9, 1, 200, item.none, 25, enemy_race.demon, 2, s_raw_demon, 1, "raw_demon")
+add_enemy(enemy.replicant, "Replicant", "This creature is organic, yet seems lifeless.", 1150, 0, 17, 0, 0, 1.25, 1, 1.25, 0.75, 180, item.none, 20, enemy_race.human, 1, s_replicant, 1, "replicant")
+add_enemy(enemy.incomplete_fiend, "Incomplete Fiend", "This looks like a frame that could fit multiple fiends.", 700, 10, 6, 9, 0, 1.6, 1.6, 1.6, 0.75, 170, item.none, 25, enemy_race.enchanted, 1, s_incomplete_fiend, 4, "incomplete_fiend")
+add_enemy(enemy.contraption, "Contraption", "A hulking mass of wires, metal, and anger.", 1500, 0, 20, 0, 10, 3, 1, 5, 1, 220, item.none, 30, enemy_race.cosmic, 3, s_contraption, 1, "contraption")
+add_enemy(enemy.unknown_mechanism, "Unknown Mechanism", "A terrifying beast, fueled by mysterious energies.", 2000, 20, 0, 15, 10, 2, 0.75, 1.5, 5, 350, item.none, 30, enemy_race.cosmic, 2, s_unkown_mechanism, 1, "unknown_mechanism")
+
+//The Final Boss
+add_enemy(enemy.administrator, "Administrator", "The Tower Tyrant. An inexplicable being. It's time to finish this!", 6000, 12, 10, 20, 13, 4, 4, 4, 4, 0, item.none, 15, enemy_race.cosmic, 1, s_administrator, 2, "administrator")
+
 //Universal
 add_enemy(enemy.thief, "Thief", "A master of cutting purses and throats.", 10, 2, 0, 0, 0, 1, 1, 1, 0.75, 17, item.avarice_shield, 25, enemy_race.human, 1, s_thief, 1, "thief")   
 add_enemy(enemy.ripper, "Ripper", "A ferocious lizard demon.", 40, 3, 0, 2, 0, 1.5, 0.75, 0.75, 0.75, 14, item.none, 15, enemy_race.demon, 2, s_ripper, 1, "ripper")

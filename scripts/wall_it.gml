@@ -44,7 +44,7 @@ with(controller)
     //mp_grid_add_instances(global.grid, enemy_parent, 0)
 }
 
-if(player.floors%6 = 0) instance_create(player.x+32,player.y,town_checkpoint)
+if(player.floors%6 = 0) instance_create(player.x,player.y,town_checkpoint)
 
 
 with(wall) 
@@ -70,6 +70,29 @@ enemy_pop = round(irandom(4) + (6+round(pop_coeff*player.floors)))
 item_pop = irandom(1) + (2+floor(player.floors/5))
 gold_pop = irandom(3) + 3
 ammo_pop = irandom(1) + 1
+
+if(player.floor_feeling = "Desolate")
+{
+    enemy_pop = round(irandom(2) + (2+round(pop_coeff*player.floors)))
+    item_pop = irandom(1) + 1
+    gold_pop = irandom(2)
+    ammo_pop = irandom(1)
+}
+
+if(player.floor_feeling = "Expansive")
+{
+    enemy_pop += irandom(4) + 2
+    item_pop += irandom(2) + 1
+    gold_pop += irandom(2) + 1
+    ammo_pop += irandom(2)
+}
+
+if(player.floor_feeling = "Vault")
+{
+    enemy_pop = irandom(3) + 2
+    item_pop += irandom(3) + 3
+    gold_pop += irandom(5) + 15
+}
 
 if(list_contains(player.perks_gained, perk.communist)) item_pop += irandom(2) + 1
 if(list_contains(player.perks_gained, perk.capitalist)) item_pop -= irandom(2) + 1
@@ -153,7 +176,8 @@ if(player.floors%5 = 0)
             if(player.floors = 5) spawn_enemy(x,y,global.foyer_boss_pool[irandom(array_length_1d(global.foyer_boss_pool)-1)])
             if(player.floors = 10) spawn_enemy(x,y,global.mines_boss_pool[irandom(array_length_1d(global.mines_boss_pool)-1)])
             if(player.floors = 15) spawn_enemy(x,y,global.graveyard_boss_pool[irandom(array_length_1d(global.graveyard_boss_pool)-1)])
-            if(player.floors = 20)spawn_enemy(x,y,global.barracks_boss_pool[irandom(array_length_1d(global.barracks_boss_pool)-1)]) 
+            if(player.floors = 20) spawn_enemy(x,y,global.barracks_boss_pool[irandom(array_length_1d(global.barracks_boss_pool)-1)]) 
+            if(player.floors = 25) spawn_enemy(x,y,enemy.administrator)
         }
     }
 }

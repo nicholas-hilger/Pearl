@@ -26,7 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>randomize()
-life = 180/(instance_number(dungeon_carver)+1)
+if(player.floor_feeling = "Expansive") life = 360/(instance_number(dungeon_carver)+1)
+else life = 180/(instance_number(dungeon_carver)+1)
+
 
 dir_change = irandom(10)+5
 
@@ -62,7 +64,8 @@ alarm[1] = dir_change
 
 room_speed = 10000
 
-tile_limit = 255
+if(player.floor_feeling = "Expansive") tile_limit = 600
+else tile_limit = 255
 </string>
           </argument>
         </arguments>

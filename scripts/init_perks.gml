@@ -24,7 +24,7 @@ add_perk(perk.brain_food, "Brain Food", "Get XP from eating consumables", "Eatin
 add_perk(perk.foodie, "Foodie", "Food more likely to spawn", "There's a chance of extra food spawning on every floor.", "foodie")
 
 add_perk(perk.counter_jockey, "Counter Jockey", "May counterattack on dodge. Enemy must be in range.", "You have a chance to counterattack an enemy when they miss you. Enemy must be in melee range to be hit.", "counter_jockey")
-add_perk(perk.parry_pro, "Parry Pro", "May counterattack on block. Enemy must be in range", "You have a chance to counterattack when blocking with a shield. Eenmy must be in melee range to be hit.", "parry_pro")
+add_perk(perk.parry_pro, "Parry Pro", "May counterattack on block. Enemy must be in range", "You have a chance to counterattack when blocking with a shield. Enemy must be in melee range to be hit.", "parry_pro")
 
 add_perk(perk.capitalist, "Capitalist", "Shop every 3rd floor, less items spawned. +1 inventory space. Overrides Communist", "A merchant is guaranteed every 3rd floor, but less items will spawn on every floor. You also gain some Zun.##Overrides Communist.", "capitalist")
 add_perk(perk.communist, "Communist", "No Tower shops, more item spawns. +1 inventory space. Overrides Capitalist", "More items spawn on every floor, but you will not find any merchants in the Tower. You also gain one inventory slot.##Overrides Capitalist.", "communist")

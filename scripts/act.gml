@@ -1,4 +1,4 @@
-if(eid != enemy.punching_bag and instance_exists(player))
+if(eid != enemy.punching_bag and instance_exists(player) and hp > 0)
 {
     if(point_distance(x,y,player.x,player.y) < (range*sprite_width+32) and player.stealth_timer = 0)
     {

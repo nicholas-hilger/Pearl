@@ -46,6 +46,16 @@ global.barracks_pool[6] = enemy.monstrosity
 //global.barracks_boss_pool[] = 
 global.barracks_boss_pool[0] = enemy.war
 
+//global.the_end_pool[] = 
+global.the_end_pool[0] = enemy.raw_demon
+global.the_end_pool[1] = enemy.replicant
+global.the_end_pool[2] = enemy.incomplete_fiend
+global.the_end_pool[3] = enemy.contraption
+global.the_end_pool[4] = enemy.unknown_mechanism
+
+//global.the_end_boss[] = 
+global.the_end_boss[0] = enemy.administrator 
+
 //global.universal_enemies[] = 
 global.universal_enemies[0] = enemy.thief
 global.universal_enemies[1] = enemy.ripper

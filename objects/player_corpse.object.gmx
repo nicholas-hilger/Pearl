@@ -97,6 +97,8 @@ else money_score = total_money - 200
 run_score = ((money_score)*5) + round(total_dmg_dealt)*2 + (kills*50) + ((days-1)*150) + ((lvl-1)*300) + (ds_list_size(perks_gained) * 255)
 run_score *= (round(highest_floor%5)+1)
 
+if(won) run_score += 1000000
+
 if(run_score &lt; 0) run_score = 0
 
 with(merchant) instance_destroy()
@@ -176,26 +178,55 @@ if(keyboard_check_pressed(vk_ralt))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_black)
-draw_set_alpha(0.5)
-draw_rectangle(-1, 0, 1920, 1080, false)
-draw_set_alpha(1)
+            <string>if(!won)
+{
+    draw_set_color(c_black)
+    draw_set_alpha(0.5)
+    draw_rectangle(-1, 0, 1920, 1080, false)
+    draw_set_alpha(1)
+}
+else
+{
+    draw_set_color(c_black)
+    draw_rectangle(-1, 0, 1920, 1080, false)
+}
 
-display_set_gui_size(display_manager.ideal_width,display_manager.ideal_height)
-draw_set_color(c_white)
-draw_set_font(hud_font)
-draw_set_halign(fa_center)
-draw_set_valign(fa_center)
-text_outline(display_get_gui_width()/2,50, "You Died!", c_white)
-draw_set_font(hurt_font)
-text_outline(display_get_gui_width()/2, 100, "(" + string(death_msg_shown) + ")", c_ltgray)
-draw_set_halign(fa_left)
-text_outline(display_get_gui_width()*0.25, 200, "Highest Floor: " + string(highest_floor) + "##Level: " + string(lvl) + "##Total Zun: " + string(total_money) + "##Kills: " + string(kills) + "##Damage Dealt: " + string(total_dmg_dealt) + "##Days Passed: " + string(days) + "##Perks Acquired: " + string(ds_list_size(perks_gained)), c_white)
-draw_set_font(hud_font)
-text_outline(display_get_gui_width()*0.25, 300, "Final Score: " + string(num_seperator(run_score)), c_white)
-draw_set_halign(fa_center)
-draw_set_valign(fa_center)
-text_outline(display_get_gui_width()/2, 400, "Press [Escape] to return#to the main menu.", c_white)
+if(!won)
+{
+    display_set_gui_size(display_manager.ideal_width,display_manager.ideal_height)
+    draw_set_color(c_white)
+    draw_set_font(hud_font)
+    draw_set_halign(fa_center)
+    draw_set_valign(fa_center)
+    text_outline(display_get_gui_width()/2,50, "You Died!", c_white)
+    draw_set_font(hurt_font)
+    text_outline(display_get_gui_width()/2, 100, "(" + string(death_msg_shown) + ")", c_ltgray)
+    draw_set_halign(fa_left)
+    text_outline(display_get_gui_width()*0.25, 200, "Highest Floor: " + string(highest_floor) + "##Level: " + string(lvl) + "##Total Zun: " + string(total_money) + "##Kills: " + string(kills) + "##Damage Dealt: " + string(total_dmg_dealt) + "##Days Passed: " + string(days) + "##Perks Acquired: " + string(ds_list_size(perks_gained)), c_white)
+    draw_set_font(hud_font)
+    text_outline(display_get_gui_width()*0.25, 300, "Final Score: " + string(num_seperator(run_score)), c_white)
+    draw_set_halign(fa_center)
+    draw_set_valign(fa_center)
+    text_outline(display_get_gui_width()/2, 400, "Press [Escape] to return#to the main menu.", c_white)
+}
+else
+{
+    display_set_gui_size(display_manager.ideal_width,display_manager.ideal_height)
+    draw_set_color(c_white)
+    draw_set_font(hud_font)
+    draw_set_halign(fa_center)
+    draw_set_valign(fa_center)
+    text_outline(display_get_gui_width()/2,50, "VICTORY!", c_white)
+    draw_set_font(hurt_font)
+    text_outline(display_get_gui_width()/2, 100, "(You toppled the Tower!)", c_ltgray)
+    draw_set_halign(fa_left)
+    text_outline(display_get_gui_width()*0.25, 200, "Highest Floor: " + string(highest_floor) + "##Level: " + string(lvl) + "##Total Zun: " + string(total_money) + "##Kills: " + string(kills) + "##Damage Dealt: " + string(total_dmg_dealt) + "##Days Passed: " + string(days) + "##Perks Acquired: " + string(ds_list_size(perks_gained)) + "##Victory: Priceless", c_white)
+    draw_set_font(hud_font)
+    text_outline(display_get_gui_width()*0.25, 300, "Final Score: " + string(num_seperator(run_score)), c_white)
+    draw_set_halign(fa_center)
+    draw_set_valign(fa_center)
+    text_outline(display_get_gui_width()/2, 400, "Press [Escape] to return#to the main menu.", c_white)
+}
 </string>
           </argument>
         </arguments>

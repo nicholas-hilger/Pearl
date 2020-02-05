@@ -105,6 +105,7 @@ if(instance_exists(dungeon_merchant) and point_distance(x,y,dungeon_merchant.x,d
     discovered = 1
     always_visible = true
 }
+if(player.floor_feeling = "Vault" and discovered) image_blend = make_color_rgb(255,255,51)
 draw_self()
 </string>
           </argument>

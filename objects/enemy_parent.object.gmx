@@ -73,6 +73,10 @@ if(instance_exists(player))
     {
         pool = global.barracks_pool
     }
+    else if(player.floors &lt; 26)
+    {
+        pool = global.the_end_pool
+    }
     else pool = global.universal_enemies
 }
 if(universal &lt; 20) pool = global.universal_enemies
@@ -80,7 +84,8 @@ if(universal &lt; 20) pool = global.universal_enemies
 if(pool != global.punching_pool)
 {
     pool_size = array_length_1d(pool)-1
-     
+    if(pool_size &lt;= 0) pool_size = 1
+    
     en_chosen = irandom(pool_size)
 }
 
@@ -90,6 +95,7 @@ if(miniboss &lt; 3)
     else if(player.floors &lt; 11) eid = enemy.rock_golem
     else if(player.floors &lt; 16) eid = enemy.vampire
     else if(player.floors &lt; 21) eid = enemy.commander
+    else if(player.floors &lt; 26) eid = enemy.unknown_mechanism
     else eid = enemy.stain
 }
 else eid = pool[en_chosen]
@@ -101,10 +107,10 @@ if(pool = global.universal_enemies)
     scale_coeff = floor(player.floors/5)
     mHp = round(mHp*(1+(1.1*scale_coeff)))
     hp = mHp
-    cut = round(cut*(1+(0.80*scale_coeff)))
-    pierce = round(pierce*(1+(0.80*scale_coeff)))
-    blunt = round(blunt*(1+(0.80*scale_coeff)))
-    magic = round(magic*(1+(0.80*scale_coeff)))
+    cut = round(cut*(1+(0.60*scale_coeff)))
+    pierce = round(pierce*(1+(0.60*scale_coeff)))
+    blunt = round(blunt*(1+(0.60*scale_coeff)))
+    magic = round(magic*(1+(0.60*scale_coeff)))
     drop_rate = round(drop_rate*(1+(0.15*scale_coeff)))
     xp = round(xp*(1+(0.7*scale_coeff)))
 }
@@ -252,8 +258,12 @@ if(hp &lt;= 0)
             potential_stair = instance_find(floor_tile, i)
             if(point_distance(potential_stair.x,potential_stair.y,x,y) &lt;= 32)
             {
-                if(player.floors != 20) instance_create(potential_stair.x,potential_stair.y,stairs)
-                else instance_create(potential_stair.x,potential_stair.y,town_checkpoint)
+                if(player.floors != 25) instance_create(potential_stair.x,potential_stair.y,stairs)
+                else
+                {
+                    player.won = true
+                    player.hp = 0
+                }
                 break
             }
         }

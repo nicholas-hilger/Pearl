@@ -97,6 +97,7 @@ if(torch_frame_timer = 60)
           <argument>
             <kind>1</kind>
             <string>image_speed = 0
+if(player.floor_feeling = "Vault") image_blend = make_color_rgb(255,255,51)
 draw_self()
 draw_sprite(s_torch,torch_frame,x,y)
 </string>

@@ -61,8 +61,7 @@ if(room = dungeon)
           <argument>
             <kind>1</kind>
             <string>event_inherited()
-
-
+if(player.floor_feeling = "Vault" and discovered) image_blend = make_color_rgb(255,255,51)
 draw_self()
 </string>
           </argument>

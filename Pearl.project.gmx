@@ -181,6 +181,14 @@
         <sprite>sprites\s_commander</sprite>
         <sprite>sprites\s_war</sprite>
       </sprites>
+      <sprites name="the end">
+        <sprite>sprites\s_raw_demon</sprite>
+        <sprite>sprites\s_replicant</sprite>
+        <sprite>sprites\s_incomplete_fiend</sprite>
+        <sprite>sprites\s_contraption</sprite>
+        <sprite>sprites\s_unkown_mechanism</sprite>
+        <sprite>sprites\s_administrator</sprite>
+      </sprites>
       <sprites name="universal">
         <sprite>sprites\s_ripper</sprite>
         <sprite>sprites\s_thief</sprite>

@@ -247,6 +247,8 @@ money_timer = 0
 can_move = true
 
 floor_feeling = ""
+
+won = false
 </string>
           </argument>
         </arguments>
@@ -445,6 +447,7 @@ if(hp &lt;= 0 and !godmode_enabled)
             days = player.days
             lvl = player.lvl
             perks_gained = player.perks_gained
+            won = player.won
         }
     }
 }
@@ -1046,6 +1049,9 @@ if(stairsKey and!console.vis)
             if(floor_feeling_type &lt; 30) floor_feeling = "Darkness"
             else if(floor_feeling_type &lt; 50) floor_feeling = "Den of Elites"
             else if(floor_feeling_type &lt; 75) floor_feeling = "Poisonous Gas"
+            else if(floor_feeling_type &lt; 85) floor_feeling = "Desolate"
+            else if(floor_feeling_type &lt; 95) floor_feeling = "Expansive"
+            else if(floor_feeling_type &lt; 100) floor_feeling = "Vault"
         }  
     }
     else
@@ -1072,6 +1078,9 @@ if(stairsKey and!console.vis)
                 if(floor_feeling_type &lt; 30) floor_feeling = "Darkness"
                 else if(floor_feeling_type &lt; 50) floor_feeling = "Den of Elites"
                 else if(floor_feeling_type &lt; 75) floor_feeling = "Poisonous Gas"
+                else if(floor_feeling_type &lt; 85) floor_feeling = "Desolate"
+                else if(floor_feeling_type &lt; 95) floor_feeling = "Expansive"
+                else if(floor_feeling_type &lt; 100) floor_feeling = "Vault"
             }  
         }
         if(place_meeting(x,y,town_checkpoint))
