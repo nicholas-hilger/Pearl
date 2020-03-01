@@ -167,7 +167,7 @@ add_armor(item.cloak_of_shadows, "Cloak of Shadows", "A cloak that seems to be m
 
 //Panoply of Potential
 add_weapon(item.sword_of_sacrifice, "Sword of Sacrifice", "The Vagabond Monarch's last rite.##Set: Panoply of Potential#(Sword of Sacrifice, Worn Raiment, Royal Targe)#Complete Set Bonus: Kills increase a random stat.", 30, 0, 0, 0, 1, weapon_type.melee, false, 3333, s_shortsword, "sword_of_sacrifice", 10)
-add_armor(item.worn_raiment, "Worn Raiment", "The Fallen Monarch's only memory of prosperity.##Set: Panoply of Potential#(Sword of Sacrifice, Worn Raiment, Royal Targe)#Complete Set Bonus: Kills increase a random stat.", 2, 1.3, 1.5, 1.2, 0.5, 3333, s_robe, "royal_raiment", 10)
+add_armor(item.worn_raiment, "Worn Raiment", "The Fallen Monarch's only memory of prosperity.##Set: Panoply of Potential#(Sword of Sacrifice, Worn Raiment, Royal Targe)#Complete Set Bonus: Kills increase a random stat.", 2, 1.3, 1.5, 1.2, 0.5, 3333, s_robe, "worn_raiment", 10)
 add_shield(item.royal_targe, "Royal Targe", "The Guardian Monarch's left-hand companion.##Set: Panoply of Potential#(Sword of Sacrifice, Worn Raiment, Royal Targe)#Complete Set Bonus: Kills increase a random stat.", 30, 0.7, 3333, s_shield, "royal_targe", 10)
 
 //Astral Apparel

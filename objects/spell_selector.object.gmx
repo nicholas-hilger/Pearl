@@ -103,30 +103,28 @@ if(castKey)
             }
         }
     }
-    if(player.weapon = item.yggdrastave)
+    if(player.weapon = item.yggdrastave or player.astral_set)
     {
         no_cost_chance = irandom(100)
         if(no_cost_chance &lt; 15)
         {
-            ds_list_insert(player.messages, 0, "The Yggdrastave glows! This spell costed no energy!")
+            if(player.weapon = item.yggdrastave) ds_list_insert(player.messages, 0, "The Yggdrastave glows! This spell costed no energy!")
+            else if(player.astral_set) ds_list_insert(player.messages, 0, "The stars align! This spell costed no energy!")
         }
         else player.energy -= global.spell_index[# sid, spell_stat.energy_cost]
     }
-    else 
+    if(place_meeting(x,y,floor_tile))
     {
-        if(place_meeting(x,y,floor_tile))
+        with(instance_create(player.x,player.y,global.spell_index[# sid, spell_stat.object]))
         {
-            player.energy -= global.spell_index[# sid, spell_stat.energy_cost]
-            with(instance_create(player.x,player.y,global.spell_index[# sid, spell_stat.object]))
-            {
-                targetX = other.x
-                targetY = other.y
-            }
-            instance_create(x,y,target)
-            instance_destroy()
+            targetX = other.x
+            targetY = other.y
         }
+        instance_create(x,y,target)
+        instance_destroy()
     }
 }
+
 
 </string>
           </argument>
