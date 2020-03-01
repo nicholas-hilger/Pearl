@@ -57,9 +57,12 @@
       <sprite>sprites\s_whip</sprite>
       <sprite>sprites\s_1h_axe</sprite>
       <sprite>sprites\s_heavy_armor</sprite>
+      <sprite>sprites\s_azure_mail</sprite>
       <sprite>sprites\s_staff</sprite>
       <sprite>sprites\s_wand</sprite>
       <sprite>sprites\s_robe</sprite>
+      <sprite>sprites\s_starry_robe</sprite>
+      <sprite>sprites\s_cloak_shadows</sprite>
       <sprite>sprites\s_tome</sprite>
       <sprite>sprites\s_smallgun</sprite>
       <sprite>sprites\s_biggun</sprite>
@@ -72,6 +75,8 @@
       <sprite>sprites\s_soul</sprite>
       <sprite>sprites\s_gauntlet</sprite>
       <sprite>sprites\s_demon_heart</sprite>
+      <sprite>sprites\s_drake_smasher</sprite>
+      <sprite>sprites\s_icon_of_hell</sprite>
     </sprites>
     <sprites name="edible">
       <sprite>sprites\s_red_potion</sprite>

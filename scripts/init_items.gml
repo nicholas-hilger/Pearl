@@ -150,6 +150,41 @@ add_shield(item.rock_shield, "Rock Shield", "A shield hewn from rock. Legends te
 add_shield(item.avarice_shield, "Targe of Avarice", "A flimsy shield made of gold. Although not very effective for blocking, this shield will increase the value of all Zun dropped by 50 percent.", 5, 0.1, 650, s_big_shield, "avarice_shield", 5)
 add_shield(item.god_shield, "God Shield", "Will block everything short of a short-range nuclear detonation. Or it might even block that.##Also, this is a dev item. Why do you have this?#-Nick", 999, 1, 1, s_big_shield, "god_shield", 99)
 
+//Set items
+
+//Champion's Courage
+add_weapon(item.simple_sword, "Simple Sword", "A sword. It seems simple, yet powerful...##Set: Champion's Courage#(Simple Sword, Azure Mail, Goddess Shield)#Complete Set Bonus: All damage taken reduced by half.", 38, 0, 0, 0, 1, weapon_type.melee, false, 3333, s_shortsword, "simple_sword", 10)
+add_armor(item.azure_mail, "Azure Mail", "A set of blue armor. Wearing it gives you a strange sense of courage...##Set: Champion's Courage#(Simple Sword, Azure Mail, Goddess Shield)#Complete Set Bonus: All damage taken reduced by half.", 4, 1.5, 1.5, 1.5, 1.5, 3333, s_azure_mail, "azure_mail", 10)
+add_shield(item.goddess_shield, "Goddess Shield", "A shield adorned by the mark of an unkown goddess. Truly a shield for the wise...##Set: Champion's Courage#(Simple Sword, Azure Mail, Goddess Shield)#Complete Set Bonus: All damage taken reduced by half.", 25, 0.8, 3333, s_shield, "goddess_shield", 10)
+
+//Gutsy Garb
+add_weapon(item.drake_smasher, "Drake Smasher", "A hunk of Boreal iron masquearading as a sword.##Set: Gutsy Garb#(Drake Smasher, Armor of Rage)#Complete Set Bonus: Occasionally go into a rage and do 4x damage.", 1, 37, 0, 0, 2, weapon_type.melee, false, 3333, s_drake_smasher, "drake_smasher", 10, enemy_race.gothic)
+add_armor(item.armor_of_rage, "Armor of Rage", "Armor made from shreds of iron, cloth, leather, and anger.##Set: Gutsy Garb#(Drake Smasher, Armor of Rage)#Complete Set Bonus: Occasionally go into a rage and do 4x damage.", 2, 1.15, 0.6, 1.9, 1.1, 3333, s_heavy_armor, "armor_of_rage", 10)
+
+//Sign of Shadows
+add_weapon(item.stealthy_spear, "Stealthy Spear", "Why get close when you can backstab someone with a ten-and-a-half-foot pole?##Set: Sign of Shadows#(Stealthy Spear, Cloak of Shadows)#Complete Set Bonus: Occasionally go into stealth mode when hit.", 0, 0, 30, 5, 2,weapon_type.melee, true, 3333, s_spear, "stealthy_spear", 10)
+add_armor(item.cloak_of_shadows, "Cloak of Shadows", "A cloak that seems to be made from pure DARKNESS. Submit to its power.##Set: Sign of Shadows#(Stealthy Spear, Cloak of Shadows)#Complete Set Bonus: Occasionally go into stealth mode when hit.", 1, 0.6, 0.6, 1.2, 3, 3333, s_cloak_shadows, "cloak_of_shadows", 10)
+
+//Panoply of Potential
+add_weapon(item.sword_of_sacrifice, "Sword of Sacrifice", "The Vagabond Monarch's last rite.##Set: Panoply of Potential#(Sword of Sacrifice, Worn Raiment, Royal Targe)#Complete Set Bonus: Kills increase a random stat.", 30, 0, 0, 0, 1, weapon_type.melee, false, 3333, s_shortsword, "sword_of_sacrifice", 10)
+add_armor(item.worn_raiment, "Worn Raiment", "The Fallen Monarch's only memory of prosperity.##Set: Panoply of Potential#(Sword of Sacrifice, Worn Raiment, Royal Targe)#Complete Set Bonus: Kills increase a random stat.", 2, 1.3, 1.5, 1.2, 0.5, 3333, s_robe, "royal_raiment", 10)
+add_shield(item.royal_targe, "Royal Targe", "The Guardian Monarch's left-hand companion.##Set: Panoply of Potential#(Sword of Sacrifice, Worn Raiment, Royal Targe)#Complete Set Bonus: Kills increase a random stat.", 30, 0.7, 3333, s_shield, "royal_targe", 10)
+
+//Astral Apparel
+add_weapon(item.cosmic_catalyst, "Cosmic Catalyst", "A powerful shard of a long-dead star.##Set: Astral Apparel#(Cosmic Catalyst, Starry Robes)#Complete Set Bonus: Spells will occasionally not cost energy.", 0, 0, 7, 45, 2, weapon_type.staff, false, 3333, s_soul, "cosmic_catalyst", 10)
+add_armor(item.starry_robes, "Starry Robes", "A robe that reflects the night sky.##Set: Astral Apparel#(Cosmic Catalyst, Starry Robes)#Complete Set Bonus: Spells will occasionally not cost energy.", 2, 0.7, 0.7, 0.5, 3, 3333, s_starry_robe, "starry_robe", 10)
+
+//Demonic Duds
+add_armor(item.infernal_armor, "Infernal Armor", "Armor forged from the corpse of a Ruler of Hell.##Set: Demonic Duds#(Infernal Armor, Icon of Hell)#Complete Set Bonus: Deal 4x damage to all demons.", 4, 1, 1.6, 1, 1.3, 3333, s_heavy_armor, "infernal_armor", 10)
+add_shield(item.icon_of_hell, "Icon of Hell", "Use the demonic blight's icon against them.##Set: Demonic Duds#(Infernal Armor, Icon of Hell)#Complete Set Bonus: Deal 4x damage to all demons.", 66, 0.6, 3333, s_icon_of_hell, "icon_of_hell", 10) 
+
+//Veteran's Vestments
+add_weapon(item.privates_pistol, "Private's Pistol", "Engraved with icons of hope and determination.##Set: Veteran's Vestments#(Private's Pistol, Ancient Duster, Guard Gauntlet)#Complete Set Bonus: When shooting, occasionally fire in a 3x3 radius of you.", 0, 14, 20, 0, 1, weapon_type.gun, false, 3333, s_smallgun, "privates_pistol", 10)
+add_armor(item.ancient_duster, "Ancient Duster", "Worn by the very first Frontier Soldier.##Set: Veteran's Vestments#(Private's Pistol, Ancient Duster, Guard Gauntlet)#Complete Set Bonus: When shooting, occasionally fire in a 3x3 radius of you.", 3, 1.3, 1.3, 1.3, 1.3, 3333, s_robe, "ancient_armor", 10)
+add_shield(item.guard_gauntlet, "Guard Gauntlet", "An experimental, light-weight shield.##Set: Veteran's Vestments#(Private's Pistol, Ancient Duster, Guard Gauntlet)#Complete Set Bonus: When shooting, occasionally fire in a 3x3 radius of you.", 30, 0.7, 3333, s_gauntlet, "guard_gauntlet", 10)
+
+
+
 //Food
 add_food(item.meatshroom, "Meatshroom", "A meaty fungus. It has a fleshy texture, and tastes like a fine steak when cooked properly. Many people use this as a substitute to meat, although some find its texture unpalatable.",
 4, 0, 0, 0, 0, 8, 25, s_mushroom, "meatshroom")
@@ -165,13 +200,13 @@ add_food(item.potroast, "Pot Roast", "A slow-cooked chunk of beef, seasoned with
 13, 0, 0, 0, 0, 25, 150, s_meal, "pot_roast")
 add_food(item.icebergsalad, "Iceberg Salad", "A refreshing assortment of veggies mixed into some torn-up iceberg lettuce. Unfortunately, there doesn't seem to be any dressing on it.  It's healthier, sure, but at what cost?",
 8, 0, 0, 0, 0, 45, 100, s_meal, "iceberg_salad")
-add_food(item.knoefla, "Knoefla Soup", "A warm, comforting soup, made from potatoes and dumplings. A common dish in the Northern Plains, but relatively unknown elsewhere.",
+add_food(item.knoefla, "Knoefla Soup", "A warm, comforting soup, made from potatoes and dumplings. A common dish in the Boreal Plains, but relatively unknown elsewhere.",
 15, 0 ,0 ,0, 0, 20, 175, s_stew, "knoefla_soup")
 add_food(item.trailmix, "Trail Mix", "A loose mixture of nuts, fruit, and chocolate that's meant to tide hikers over without making them too full to hike. It seems the maker was prudent enough to leave the enemy of humanity, raisins, out of it.",
 6, 0 ,0, 0, 0, 18, 75, s_meal, "trail_mix") 
 add_food(item.pemmican, "Pemmican", "A ball of protein and berries. Made from meat that is dried and crushed into a fine dust, before being mixed with fat and other additives. It's not particularly tasty on its own, but it can keep for years on end.",
 7, 0, 0, 0, 0, 14, 100, s_food, "pemmican")
-add_food(item.jerky, "Jerky", "Jerky made from some unidentified meat. While you can;t tell what meat it was made from, it at least seems to be an authentic strip of meat, not some formed and over-salted stick of (more) unhealthiness.",
+add_food(item.jerky, "Jerky", "Jerky made from some unidentified meat. While you can't tell what meat it was made from, it at least seems to be an authentic strip of meat, not some formed and over-salted stick of (more) unhealthiness.",
 7, 0, 0, 0, 0, 20, 80, s_food, "jerky")
 add_food(item.mana_treat, "Mana Bun", "A large bun covered in sweet glaze. These treats are a specialty of the Arcane Alliance, and are fortified to quickly restore the consumer's lost energy.", 
 40, 0, 0, 0,  0, 0, 50, s_food, "mana_treat")

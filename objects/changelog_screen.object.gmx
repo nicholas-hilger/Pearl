@@ -65,6 +65,7 @@ draw_text_ext(11, 200, "Changelog for Alpha "  +string(global.ver_number) + " ("
 #-Added five new perks: Dog's BFF, Cutpurse, Winging It, Raimifications, and Naturalist
 #-Added Floor Anomalies. Floors have a chance to now be extra dark, have extra elites spawn, be filled with poison gas, and more!
 #-Added in the Final Area's enemies and boss
+#-You can now officially beat the game
 Hit [Enter] to dismiss this screen)", 24, 1890)
 
 </string>

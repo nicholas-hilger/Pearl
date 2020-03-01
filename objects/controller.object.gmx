@@ -65,7 +65,7 @@ hour = 8
 //Tier colors
 
 brown = make_color_rgb(139,69,19)
-orange = make_color_rgb(255,171,0)
+dark_orange = make_color_rgb(204,112,0)
 cyan = make_color_rgb(163,208,220)
 pink = make_color_rgb(255,105,180)
 divine = make_color_rgb(255,250,205)
@@ -80,8 +80,9 @@ tier[6] = divine //angellic gear
 tier[7] = c_maroon //devil (may cry) gear
 tier[8] = pink //current top-tier
 tier[9] = c_purple //tomes
+tier[10] = dark_orange //set items
 
-tier[99] = c_red
+tier[99] = c_dkgray
 
 grid_timer = 60
 
