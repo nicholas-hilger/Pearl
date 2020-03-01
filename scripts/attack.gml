@@ -133,7 +133,11 @@ if(defender = player)
         reflected = true
         dmg = 0
     }
-    if(player.berserk_timer > 0) dmg *= 2
+    if(player.berserk_timer > 0) 
+    {
+        if(!player.gutsy_set) dmg *= 2
+        else dmg *= 4
+    }
     if(player.champion_set) dmg = round(dmg/2)
 }
 
@@ -185,7 +189,7 @@ if(attacker = player)
         if(pierce > 0) dmg += round(perception/4) + irandom(2)
     }
     
-    if(player.weapon = item.fjolnir and berserk_timer = 0)
+    if((player.weapon = item.fjolnir or player.gutsy_set) and berserk_timer = 0)
     {
         enrage_chance = irandom(100)
         if(enrage_chance < 25) 
