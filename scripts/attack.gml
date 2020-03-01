@@ -76,6 +76,17 @@ if(defender = player)
         }
     }
     
+    if(player.stealthy_set and player.stealth_timer = 0)
+    {
+        stealth_chance = irandom(100)
+        if(stealth_chance <= 15)
+        {
+            player.stealth_timer = 30
+            ds_list_insert(player.messages, 0, "You vanish in a puff of smoke!")
+            gain_buff(buff.stealth, 30)
+        }
+    }
+    
     if(!player.champion_set) dmg -= defense
     miss = irandom(100)
     if(player.job = class.rogue) miss -= 15

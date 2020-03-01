@@ -163,7 +163,7 @@ add_armor(item.armor_of_rage, "Armor of Rage", "Armor made from shreds of iron, 
 
 //Sign of Shadows
 add_weapon(item.stealthy_spear, "Stealthy Spear", "Why get close when you can backstab someone with a ten-and-a-half-foot pole?##Set: Sign of Shadows#(Stealthy Spear, Cloak of Shadows)#Complete Set Bonus: Occasionally go into stealth mode when hit.", 0, 0, 30, 5, 2,weapon_type.melee, true, 3333, s_spear, "stealthy_spear", 10)
-add_armor(item.cloak_of_shadows, "Cloak of Shadows", "A cloak that seems to be made from pure DARKNESS. Submit to its power.##Set: Sign of Shadows#(Stealthy Spear, Cloak of Shadows)#Complete Set Bonus: Occasionally go into stealth mode when hit.", 1, 0.6, 0.6, 1.2, 3, 3333, s_cloak_shadows, "cloak_of_shadows", 10)
+add_armor(item.cloak_of_shadows, "Cloak of Shadows", "A cloak that seems to be made from pure DARKNESS.##Set: Sign of Shadows#(Stealthy Spear, Cloak of Shadows)#Complete Set Bonus: Occasionally go into stealth mode when hit.", 1, 0.6, 0.6, 1.2, 3, 3333, s_cloak_shadows, "cloak_of_shadows", 10)
 
 //Panoply of Potential
 add_weapon(item.sword_of_sacrifice, "Sword of Sacrifice", "The Vagabond Monarch's last rite.##Set: Panoply of Potential#(Sword of Sacrifice, Worn Raiment, Royal Targe)#Complete Set Bonus: Kills increase a random stat.", 30, 0, 0, 0, 1, weapon_type.melee, false, 3333, s_shortsword, "sword_of_sacrifice", 10)
