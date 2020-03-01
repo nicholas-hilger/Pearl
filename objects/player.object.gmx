@@ -249,6 +249,14 @@ can_move = true
 floor_feeling = ""
 
 won = false
+
+champion_set = false
+gutsy_set = false
+stealthy_set = false
+potential_set = false
+astral_set = false
+demonic_set = false
+veteran_set = false
 </string>
           </argument>
         </arguments>

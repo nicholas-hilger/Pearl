@@ -76,7 +76,7 @@ if(defender = player)
         }
     }
     
-    dmg -= defense
+    if(!player.champion_set) dmg -= defense
     miss = irandom(100)
     if(player.job = class.rogue) miss -= 15
     if(list_contains(player.perks_gained, perk.trickster)) miss -= 5
@@ -134,6 +134,7 @@ if(defender = player)
         dmg = 0
     }
     if(player.berserk_timer > 0) dmg *= 2
+    if(player.champion_set) dmg = round(dmg/2)
 }
 
 if(attacker = player)
