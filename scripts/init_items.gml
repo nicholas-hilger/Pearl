@@ -179,9 +179,9 @@ add_armor(item.infernal_armor, "Infernal Armor", "Armor forged from the corpse o
 add_shield(item.icon_of_hell, "Icon of Hell", "Use the demonic blight's icon against them.##Set: Demonic Duds#(Infernal Armor, Icon of Hell)#Complete Set Bonus: Deal 4x damage to all demons.", 66, 0.6, 3333, s_icon_of_hell, "icon_of_hell", 10) 
 
 //Veteran's Vestments
-add_weapon(item.privates_pistol, "Private's Pistol", "Engraved with icons of hope and determination.##Set: Veteran's Vestments#(Private's Pistol, Ancient Duster, Guard Gauntlet)#Complete Set Bonus: When shooting, occasionally fire in a 3x3 radius of you.", 0, 14, 20, 0, 1, weapon_type.gun, false, 3333, s_smallgun, "privates_pistol", 10)
-add_armor(item.ancient_duster, "Ancient Duster", "Worn by the very first Frontier Soldier.##Set: Veteran's Vestments#(Private's Pistol, Ancient Duster, Guard Gauntlet)#Complete Set Bonus: When shooting, occasionally fire in a 3x3 radius of you.", 3, 1.3, 1.3, 1.3, 1.3, 3333, s_robe, "ancient_armor", 10)
-add_shield(item.guard_gauntlet, "Guard Gauntlet", "An experimental, light-weight shield.##Set: Veteran's Vestments#(Private's Pistol, Ancient Duster, Guard Gauntlet)#Complete Set Bonus: When shooting, occasionally fire in a 3x3 radius of you.", 30, 0.7, 3333, s_gauntlet, "guard_gauntlet", 10)
+add_gun(item.privates_pistol, "Private's Pistol", "Has four barrels, for some reason.##Set: Veteran's Vestments#(Private's Pistol, Ancient Duster, Guard Gauntlet)#Complete Set Bonus: Guns may not use ammo when fired.", 0, 14, 20, 0, 1, 4, 80, 5, 3333, s_smallgun, "privates_pistol", 10)
+add_armor(item.ancient_duster, "Ancient Duster", "Worn by the very first Frontier Soldier.##Set: Veteran's Vestments#(Private's Pistol, Ancient Duster, Guard Gauntlet)#Complete Set Bonus: Guns may not use ammo when fired.", 3, 1.3, 1.3, 1.3, 1.3, 3333, s_robe, "ancient_duster", 10)
+add_shield(item.guard_gauntlet, "Guard Gauntlet", "An experimental, light-weight shield.##Set: Veteran's Vestments#(Private's Pistol, Ancient Duster, Guard Gauntlet)#Complete Set Bonus: Guns may not use ammo when fired.", 30, 0.7, 3333, s_gauntlet, "guard_gauntlet", 10)
 
 
 

@@ -94,7 +94,17 @@ if(castKey)
     {
         if(player.ammo &gt;= global.item_index[# player.weapon, item_stat.ammo_used])
         {
-            player.ammo -= global.item_index[# player.weapon, item_stat.ammo_used]
+            ammo_cost = global.item_index[# player.weapon, item_stat.ammo_used]
+            if(player.veteran_set)
+            {
+                no_ammo_chance = irandom(100)
+                if(no_ammo_chance &lt; 15)
+                {
+                    ds_list_insert(player.messages, 0, "Your gun is too good to use ammo!")
+                    ammo_cost = 0
+                }
+            }
+            player.ammo -= ammo_cost
             with(instance_create(player.x,player.y,bullet))
             {
                 targetX = other.x
