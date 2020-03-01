@@ -81,8 +81,9 @@ if(life = 1)
             pool = global.meal_pool
         }
         else if(pool_percent &lt; 94) pool = choose(global.weapon_pool, global.armor_pool)
-        else if(pool_percent &lt; 97) pool = global.potion_pool
-        else if(pool_percent &lt; 99) pool = global.tome_pool
+        else if(pool_percent &lt; 96) pool = global.potion_pool
+        else if(pool_percent &lt; 97) pool = global.tome_pool
+        else if(pool_percent &lt; 99) pool = global.set_pool
         else pool = global.pools[irandom(array_length_1d(global.pools)-1)]
         
         pool_size = (array_length_1d(pool)-1)

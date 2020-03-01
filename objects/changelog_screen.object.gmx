@@ -66,6 +66,7 @@ draw_text_ext(11, 200, "Changelog for Alpha "  +string(global.ver_number) + " ("
 #-Added Floor Anomalies. Floors have a chance to now be extra dark, have extra elites spawn, be filled with poison gas, and more!
 #-Added in the Final Area's enemies and boss
 #-You can now officially beat the game
+#-Added Set Items. Set Items are about tier 4 or 5 in quality, but they can confer powerful bonuses when all the items in a set are worn
 Hit [Enter] to dismiss this screen)", 24, 1890)
 
 </string>

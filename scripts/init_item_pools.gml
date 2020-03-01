@@ -144,6 +144,26 @@ global.meal_pool[7] = item.rye
 global.meal_pool[8] = item.icebergsalad
 global.meal_pool[9] = item.jerky 
 
+//Set Pool: All the Set items
+//global.set_pool[] = 
+global.set_pool[0] = item.simple_sword
+global.set_pool[1] = item.azure_mail
+global.set_pool[2] = item.goddess_shield
+global.set_pool[3] = item.drake_smasher
+global.set_pool[4] = item.armor_of_rage
+global.set_pool[5] = item.stealthy_spear
+global.set_pool[6] = item.cloak_of_shadows
+global.set_pool[7] = item.sword_of_sacrifice
+global.set_pool[8] = item.worn_raiment
+global.set_pool[9] = item.royal_targe
+global.set_pool[10] = item.cosmic_catalyst
+global.set_pool[11] = item.starry_robes
+global.set_pool[12] = item.infernal_armor
+global.set_pool[13] = item.icon_of_hell
+global.set_pool[14] = item.privates_pistol
+global.set_pool[15] = item.ancient_duster
+global.set_pool[16] = item.guard_gauntlet 
+
 //Weaponsmith: Pretty much most weapons
 //global.weapon_pool[] = 
 
