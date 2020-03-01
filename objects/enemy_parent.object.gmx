@@ -219,14 +219,15 @@ if(hp &lt;= 0)
         }
     }
     if(player.weapon = item.lifedrinker) player.max_hp++
-    if(player.weapon = item.gotterdammerung) 
+    if(player.weapon = item.gotterdammerung or player.potential_set) 
     {
         stat_up = choose("Dex","Per","Str","Wis")
         if(stat_up = "Dex") player.dexterity++
         if(stat_up = "Per") player.perception++
         if(stat_up = "Str") player.strength++
         if(stat_up = "Wis") player.wisdom++
-        ds_list_insert(player.messages, 0, "The power of Gotterdammerung increases your " + string(stat_up) + "!")
+        if(player.weapon = item.gotterdammerung) ds_list_insert(player.messages, 0, "The power of Gotterdammerung increases your " + string(stat_up) + "!")
+        else if(player.potential_set) ds_list_insert(player.messages, 0, "The power of the Forsaken Monarchs increases your " + string(stat_up) + "!")
     }
     if(player.lvl &lt; player.max_level and !list_contains(player.perks_gained, perk.instant_gratification) and player.status != "VAMP") player.xp += total_xp
     ds_list_insert(player.messages, 0, string(name) + " dies.")
