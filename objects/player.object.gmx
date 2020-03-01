@@ -317,6 +317,44 @@ if(loading_time &lt; 5)
             blunt_resist = global.item_index[# armor, item_stat.blunt_resist]
             magic_resist = global.item_index[# armor, item_stat.magic_resist]
         }
+        if(weapon = item.simple_sword and armor = item.azure_mail and shield = item.goddess_shield) 
+        {
+            champion_set = true
+        }
+        else if(weapon = item.drake_smasher and armor = item.armor_of_rage)
+        {
+            gutsy_set = true
+        }
+        else if(weapon = item.stealthy_spear and armor = item.cloak_of_shadows)
+        {
+            stealthy_set = true
+        }
+        else if(weapon = item.sword_of_sacrifice and armor = item.worn_raiment and shield = item.royal_targe)
+        {
+            potential_set = true
+        }
+        else if(weapon = item.cosmic_catalyst and armor = item.starry_robes)
+        {
+            astral_set = true
+        }
+        else if(armor = item.infernal_armor and shield = item.icon_of_hell)
+        {
+            demonic_set = true
+        }
+        else if(weapon = item.privates_pistol and armor = item.ancient_duster and shield = item.guard_gauntlet)
+        {
+            veteran_set = true
+        }
+        else
+        {
+            champion_set = false
+            gutsy_set = false
+            stealthy_set = false
+            potential_set = false
+            astral_set = false
+            demonic_set = false
+            veteran_set = false
+        }
     }
     else if(played_time &lt; 30 and loading_time &gt; 60)
     {
