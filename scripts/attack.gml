@@ -353,6 +353,13 @@ if(attacker = player)
             player.money += money_stolen
         }
     }
+    if(player.demonic_set)
+    {
+       if(defender.race = enemy_race.demon)
+       {
+            dmg *= 4
+       }
+    }
 }
 
 if(attacker = bullet)
