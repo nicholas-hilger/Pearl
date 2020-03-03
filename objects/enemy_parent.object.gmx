@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-3</depth>
+  <depth>-4</depth>
   <persistent>0</persistent>
   <parentName>interactable</parentName>
   <maskName>s_charmask</maskName>

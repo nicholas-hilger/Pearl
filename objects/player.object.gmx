@@ -105,7 +105,7 @@ else
     perception = global.class_index[# job, class_stat.perception]
     dexterity = global.class_index[# job, class_stat.dexterity]
     
-    max_xp = 65
+    max_xp = 55
     xp = 0
     
     turns = 0
@@ -1531,10 +1531,10 @@ if(draw_char_sheet)
     transform_string_1 = ""
     transform_string_2 = ""
     if(status = "VAMP") transform_string_2 = "Vampire"
-    if(status = "SKEL") transform_string_1 = " Wight "
+    if(status = "SKEL") transform_string_1 = "Wight "
     
     draw_set_halign(fa_left)
-    draw_text(12, 180, string(name) + ", Level " + string(lvl) + string(transform_string_1) + string(global.class_index[# job, class_stat.name]) + " " + string(transform_string_2))
+    draw_text(12, 180, string(name) + ", Level " + string(lvl) + " " + string(transform_string_1) + string(global.class_index[# job, class_stat.name]) + " " + string(transform_string_2))
     draw_text(12, 228, "Damage:")
     draw_set_color(c_red)
     draw_text(12,260, "Cut:    " + string(cut))

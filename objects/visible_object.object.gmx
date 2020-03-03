@@ -64,8 +64,11 @@ is_enemy = false
     
     if(instance_exists(torch) or instance_exists(dungeon_merchant))
     {
-        tx = instance_nearest(x,y,torch).x
-        ty = instance_nearest(x,y,torch).y
+        t = instance_nearest(x,y,torch)
+        t = instance_nearest(x,y,torch)
+        
+        tx = t.x
+        ty = t.y
         
         if(instance_exists(dungeon_merchant))
         {
