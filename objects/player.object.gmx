@@ -1100,7 +1100,7 @@ if(stairsKey and!console.vis)
             else if(floor_feeling_type &lt; 100) floor_feeling = "Vault"
         }  
     }
-    else
+    else if(room = dungeon)
     {
         if(place_meeting(x,y,stairs)) 
         {
@@ -1115,8 +1115,6 @@ if(stairsKey and!console.vis)
                 gain_buff(buff.stealth, 30)
             }
             if(floors &gt; highest_floor) highest_floor = floors
-        
-            floor_feeling_chance = irandom(100)
             floor_feeling_chance = irandom(100)
             if(floor_feeling_chance &lt; 20)
             {
@@ -1138,7 +1136,6 @@ if(stairsKey and!console.vis)
             if(teleporting &gt; 0) 
             {
                 teleporting = 0
-                
             }
         }
     }
